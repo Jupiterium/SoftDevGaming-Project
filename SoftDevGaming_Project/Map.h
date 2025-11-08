@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <string>
 #include "Tile.h"
 using namespace std;
 
@@ -14,7 +15,6 @@ class Map
 private:
 	int width, height;
 	vector<vector<Tile>> mapTile;
-
 
 public:
 	Map();

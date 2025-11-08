@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 /*
@@ -8,7 +9,8 @@ using namespace std;
 * Provides a base class for all living beings (Player, Enemy).
 */
 
-class Entity {
+class Entity 
+{
 protected:
     string name;
     int health;

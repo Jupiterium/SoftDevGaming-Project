@@ -1,5 +1,8 @@
 #pragma once
 
+#include <string>
+using namespace std;
+
 /*
 * Purpose of this class:
 * A simple data class to hold item information.

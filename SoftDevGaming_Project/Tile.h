@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 using namespace std;
 
 /*
@@ -12,7 +13,6 @@ class Tile
 private:
 	char symbol;
 	bool walkable;
-
 
 public:
 	Tile(char s = ' ', bool w = false);

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Enemy.h"
+using namespace std;
 
 /*
 * Purpose of this class:
