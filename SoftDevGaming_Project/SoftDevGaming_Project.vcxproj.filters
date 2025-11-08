@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Map">
+      <UniqueIdentifier>{850c7253-0201-4634-b3b9-ff45ef14aee2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Entities">
+      <UniqueIdentifier>{31d1f38c-625d-49f3-a549-2fde57401377}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Entities\Enemy">
+      <UniqueIdentifier>{85e6cf57-2d69-495b-a22b-bc8ef7cfbcef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Entities\Player">
+      <UniqueIdentifier>{951bc10c-5d94-4b22-944c-f095d30b563c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Managers &amp; Controllers">
+      <UniqueIdentifier>{9debeee7-7395-4214-bf33-e52ae443434c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Item">
+      <UniqueIdentifier>{41685511-56a6-4d43-8347-484e2fb6c397}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Map">
+      <UniqueIdentifier>{3da3a9b6-13ad-49a2-becb-4009b5b6af97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entities">
+      <UniqueIdentifier>{b56822ba-55ba-4bfd-8237-475f386cf502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Managers &amp; Controllers">
+      <UniqueIdentifier>{67cc6f18-9f7c-4eea-9ffb-7359df71e68b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Item">
+      <UniqueIdentifier>{b62ea5fc-fa10-4e72-9ee7-c37128fc108d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files\Entities\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="ConcreteEnemy.h">
+      <Filter>Header Files\Entities\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyDecorator.h">
+      <Filter>Header Files\Entities\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="CounterAttackEnemy.h">
+      <Filter>Header Files\Entities\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="FleeEnemy.h">
+      <Filter>Header Files\Entities\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Entities\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Header Files\Managers &amp; Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameData.h">
+      <Filter>Header Files\Managers &amp; Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyFactory.h">
+      <Filter>Header Files\Managers &amp; Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatController.h">
+      <Filter>Header Files\Managers &amp; Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
