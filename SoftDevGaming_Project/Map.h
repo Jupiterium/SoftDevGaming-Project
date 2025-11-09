@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include "Tile.h"
+#include "Item.h"
 using namespace std;
 
 /* 
@@ -17,12 +18,17 @@ private:
 	vector<vector<Tile>> mapTile;
 
 public:
-	Map();
-	void loadFromFile(string filename);
+	Map(int width, int height);
+	//void loadFromFile(string filename);
 
-	// Getters
-	Tile& getTile(int x, int y);
 	bool isWalkable(int x, int y);
+
+	void ReplaceTile(char new_char, int x, int y);
+
+	// Environment generation methods
+	void GenerateBushLayout();
+	void GenerateTrees(int count);
+	void GenerateWater(int count);
 	
 	// Overloaded operator to print the map
 	friend ostream& operator<<(ostream& out, const Map& map);

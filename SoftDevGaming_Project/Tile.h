@@ -8,19 +8,15 @@ using namespace std;
 * Represents a single tile on the map. Acts as a simple data class.
 */
 
-class Tile
-{
-private:
-	char symbol;
-	bool walkable;
+class Tile {
+	int symbol;  //refer to ascii table for character
 
 public:
-	Tile(char s = ' ', bool w = false);
+	Tile(char symbol = ' ') {
+		this->symbol = symbol;
+	}
 
-	// Getters 
-	char getSymbol() const;
-	bool isWalkable() const;
-
-	// Setter
-	void setTile(char s, bool w);
+	char getChar() const {
+		return symbol;
+	}
 };
