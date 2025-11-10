@@ -47,3 +47,34 @@
 
 # More user-specific files
 *.wsuo
+
+# Visual Studio user / cache files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# IntelliSense / browse databases
+*.VC.db
+*.VC.VC.opendb
+*.opendb
+
+# Precompiled header & other VS caches
+*.ipch
+
+# Build directories
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]uild/
+[bB]in/
+[Oo]bj/
+/SoftDevGaming_Project/.vs
+SoftDevGaming_Project/.vs/SoftDevGaming_Project/FileContentIndex/071a4ee1-85ef-4377-9571-ecf4c6e8f276.vsidx
+*.vsidx
+/SoftDevGaming_Project/.vs/SoftDevGaming_Project/FileContentIndex
+SoftDevGaming_Project/.vs/SoftDevGaming_Project/v17/DocumentLayout.backup.json
+/SoftDevGaming_Project/.vs
+/SoftDevGaming_Project/.vs
