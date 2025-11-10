@@ -30,3 +30,14 @@
 *.exe
 *.out
 *.app
+
+# Database files
+*.slnx.sqlite
+*.sqlite
+
+# More user-specific files
+*.wsuo
+
+# JSON files in the .vs folder
+.vs/**/*.json
+!*.vs/ProjectSettings/LaunchProfiles.json
