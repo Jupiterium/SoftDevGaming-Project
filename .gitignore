@@ -35,9 +35,15 @@
 *.slnx.sqlite
 *.sqlite
 
-# More user-specific files
-*.wsuo
+# Database journal/lock files
+*.db-shm
+*.db-wal
+*.opendb
+*.slnx.sqlite
 
 # JSON files in the .vs folder
 .vs/**/*.json
 !*.vs/ProjectSettings/LaunchProfiles.json
+
+# More user-specific files
+*.wsuo
