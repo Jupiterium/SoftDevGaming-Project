@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -82,7 +82,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Map.h",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Map.h",
               "RelativeDocumentMoniker": "Map.h",
@@ -103,8 +103,7 @@
               "RelativeToolTip": "Item.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-08T23:02:26.591Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T23:02:26.591Z"
             },
             {
               "$type": "Document",
@@ -116,8 +115,7 @@
               "RelativeToolTip": "Tile.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-08T23:14:22.8Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T23:14:22.8Z"
             }
           ]
         },
@@ -131,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Map.cpp",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Map.cpp",
               "RelativeDocumentMoniker": "Map.cpp",
@@ -152,8 +150,7 @@
               "RelativeToolTip": "Item.h",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-08T02:42:40.695Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T02:42:40.695Z"
             },
             {
               "$type": "Document",
@@ -177,8 +174,7 @@
               "RelativeToolTip": "EnemyFactory.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-08T01:59:30.758Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T01:59:30.758Z"
             },
             {
               "$type": "Document",
@@ -190,8 +186,7 @@
               "RelativeToolTip": "GameData.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-08T01:59:15.075Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T01:59:15.075Z"
             },
             {
               "$type": "Document",
@@ -215,8 +210,7 @@
               "RelativeToolTip": "FleeEnemy.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-08T01:57:30.429Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T01:57:30.429Z"
             },
             {
               "$type": "Document",
@@ -228,8 +222,7 @@
               "RelativeToolTip": "CounterAttackEnemy.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-08T01:57:17.436Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T01:57:17.436Z"
             },
             {
               "$type": "Document",
@@ -241,8 +234,7 @@
               "RelativeToolTip": "EnemyDecorator.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-08T01:56:50.335Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T01:56:50.335Z"
             },
             {
               "$type": "Document",
@@ -278,8 +270,7 @@
               "RelativeToolTip": "Player.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-08T01:54:07.061Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T01:54:07.061Z"
             },
             {
               "$type": "Document",
@@ -291,12 +282,11 @@
               "RelativeToolTip": "Entity.h",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAA0AAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-08T01:52:27.483Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T01:52:27.483Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Main.cpp",
               "RelativeDocumentMoniker": "Main.cpp",
@@ -304,8 +294,7 @@
               "RelativeToolTip": "Main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-08T01:51:27.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T01:51:27.154Z"
             }
           ]
         }
