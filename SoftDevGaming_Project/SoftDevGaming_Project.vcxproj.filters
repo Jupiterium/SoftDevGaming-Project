@@ -43,6 +43,12 @@
     <Filter Include="Source Files\Item">
       <UniqueIdentifier>{b62ea5fc-fa10-4e72-9ee7-c37128fc108d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Entities\Enemy">
+      <UniqueIdentifier>{358a05c3-b25a-4077-a74e-d21048c61ed2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entities\Player">
+      <UniqueIdentifier>{368ac96f-3086-4acf-847e-f3eb1499299d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -52,10 +58,16 @@
       <Filter>Source Files\Entities</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Source Files\Entities\Player</Filter>
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Source Files\Entities\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="ConcreteEnemy.cpp">
+      <Filter>Source Files\Entities\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyDecorator.cpp">
+      <Filter>Source Files\Entities\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
