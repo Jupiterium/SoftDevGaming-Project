@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\ConcreteEnemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:ConcreteEnemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\EnemyDecorator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:EnemyDecorator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -21,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -82,7 +102,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Map.h",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Map.h",
               "RelativeDocumentMoniker": "Map.h",
@@ -95,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "Item.cpp",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Item.cpp",
               "RelativeDocumentMoniker": "Item.cpp",
@@ -107,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "Tile.h",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Tile.h",
               "RelativeDocumentMoniker": "Tile.h",
@@ -129,20 +149,85 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ConcreteEnemy.cpp",
+              "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\ConcreteEnemy.cpp",
+              "RelativeDocumentMoniker": "ConcreteEnemy.cpp",
+              "ToolTip": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\ConcreteEnemy.cpp",
+              "RelativeToolTip": "ConcreteEnemy.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-11T23:28:00.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Enemy.cpp",
+              "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Enemy.cpp",
+              "RelativeDocumentMoniker": "Enemy.cpp",
+              "ToolTip": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Enemy.cpp",
+              "RelativeToolTip": "Enemy.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-11T23:27:36.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EnemyDecorator.cpp",
+              "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\EnemyDecorator.cpp",
+              "RelativeDocumentMoniker": "EnemyDecorator.cpp",
+              "ToolTip": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\EnemyDecorator.cpp",
+              "RelativeToolTip": "EnemyDecorator.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-11T23:27:12.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Entity.cpp",
+              "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Entity.cpp",
+              "RelativeDocumentMoniker": "Entity.cpp",
+              "ToolTip": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Entity.cpp",
+              "RelativeToolTip": "Entity.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-11T23:26:44.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Player.cpp",
+              "RelativeDocumentMoniker": "Player.cpp",
+              "ToolTip": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Player.cpp",
+              "RelativeToolTip": "Player.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-11T23:26:18.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Map.cpp",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Map.cpp",
               "RelativeDocumentMoniker": "Map.cpp",
               "ToolTip": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Map.cpp",
               "RelativeToolTip": "Map.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-08T22:52:09.713Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "Item.h",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Item.h",
               "RelativeDocumentMoniker": "Item.h",
@@ -154,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "CombatController.h",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\CombatController.h",
               "RelativeDocumentMoniker": "CombatController.h",
@@ -166,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "EnemyFactory.h",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\EnemyFactory.h",
               "RelativeDocumentMoniker": "EnemyFactory.h",
@@ -178,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "GameData.h",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\GameData.h",
               "RelativeDocumentMoniker": "GameData.h",
@@ -190,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "GameManager.h",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\GameManager.h",
               "RelativeDocumentMoniker": "GameManager.h",
@@ -202,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "FleeEnemy.h",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\FleeEnemy.h",
               "RelativeDocumentMoniker": "FleeEnemy.h",
@@ -214,7 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "CounterAttackEnemy.h",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\CounterAttackEnemy.h",
               "RelativeDocumentMoniker": "CounterAttackEnemy.h",
@@ -226,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "EnemyDecorator.h",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\EnemyDecorator.h",
               "RelativeDocumentMoniker": "EnemyDecorator.h",
@@ -238,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "ConcreteEnemy.h",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\ConcreteEnemy.h",
               "RelativeDocumentMoniker": "ConcreteEnemy.h",
@@ -250,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "Enemy.h",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Enemy.h",
               "RelativeDocumentMoniker": "Enemy.h",
@@ -262,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "Player.h",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Player.h",
               "RelativeDocumentMoniker": "Player.h",
@@ -280,13 +365,14 @@
               "RelativeDocumentMoniker": "Entity.h",
               "ToolTip": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Entity.h",
               "RelativeToolTip": "Entity.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA0AAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAA0AAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-08T01:52:27.483Z"
+              "WhenOpened": "2025-11-08T01:52:27.483Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\Users\\teacu\\Education\\TUS\\Software Design\\C\u002B\u002B\\repo\\SoftDevGaming-Project\\SoftDevGaming_Project\\Main.cpp",
               "RelativeDocumentMoniker": "Main.cpp",

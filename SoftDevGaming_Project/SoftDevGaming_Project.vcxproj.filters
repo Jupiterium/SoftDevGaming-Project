@@ -43,6 +43,12 @@
     <Filter Include="Source Files\Item">
       <UniqueIdentifier>{b62ea5fc-fa10-4e72-9ee7-c37128fc108d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Entities\Player">
+      <UniqueIdentifier>{d205fcf5-b3fe-4bd3-9f50-613be0cff48a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entities\Enemy">
+      <UniqueIdentifier>{b75880be-7d4c-46db-b543-9ff099d66fb1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -54,20 +60,20 @@
     <ClCompile Include="Item.cpp">
       <Filter>Source Files\Item</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files\Entities</Filter>
-    </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="EnemyDecorator.cpp">
-      <Filter>Source Files\Entities</Filter>
+    <ClCompile Include="ConcreteEnemy.cpp">
+      <Filter>Source Files\Entities\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Source Files\Entities\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="ConcreteEnemy.cpp">
-      <Filter>Source Files\Entities</Filter>
+    <ClCompile Include="EnemyDecorator.cpp">
+      <Filter>Source Files\Entities\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Entities\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
