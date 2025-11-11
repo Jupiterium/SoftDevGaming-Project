@@ -54,6 +54,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.vsidx
+*DocumentLayout*.json
 
 # IntelliSense / browse databases
 *.VC.db
@@ -71,10 +73,8 @@ x86/
 [Bb]uild/
 [bB]in/
 [Oo]bj/
+
 /SoftDevGaming_Project/.vs
-SoftDevGaming_Project/.vs/SoftDevGaming_Project/FileContentIndex/071a4ee1-85ef-4377-9571-ecf4c6e8f276.vsidx
-*.vsidx
-/SoftDevGaming_Project/.vs/SoftDevGaming_Project/FileContentIndex
-SoftDevGaming_Project/.vs/SoftDevGaming_Project/v17/DocumentLayout.backup.json
-/SoftDevGaming_Project/.vs
-/SoftDevGaming_Project/.vs
+SoftDevGaming_Project/.vs
+
+

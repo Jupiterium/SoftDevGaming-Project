@@ -3,68 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\CombatController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CombatController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\EnemyFactory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EnemyFactory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\CombatController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:CombatController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\GameData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\EnemyFactory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:EnemyFactory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\GameData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:GameData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\FleeEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FleeEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\CounterAttackEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CounterAttackEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\FleeEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:FleeEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\EnemyDecorator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EnemyDecorator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\CounterAttackEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:CounterAttackEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\ConcreteEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ConcreteEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\EnemyDecorator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:EnemyDecorator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\ConcreteEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:ConcreteEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13C98F4E-E55F-4D58-BFFD-9B5273B1BEDF}|SoftDevGaming_Project.vcxproj|solutionrelative:Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,8 +78,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Enemy.cpp",
+              "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Enemy.cpp",
+              "RelativeDocumentMoniker": "Enemy.cpp",
+              "ToolTip": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Enemy.cpp",
+              "RelativeToolTip": "Enemy.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-10T18:42:21.854Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -86,12 +103,11 @@
               "RelativeToolTip": "Entity.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-10T10:44:39.865Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-10T10:44:39.865Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Item.h",
               "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Item.h",
               "RelativeDocumentMoniker": "Item.h",
@@ -103,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "CombatController.h",
               "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\CombatController.h",
               "RelativeDocumentMoniker": "CombatController.h",
@@ -115,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "EnemyFactory.h",
               "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\EnemyFactory.h",
               "RelativeDocumentMoniker": "EnemyFactory.h",
@@ -127,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "GameData.h",
               "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\GameData.h",
               "RelativeDocumentMoniker": "GameData.h",
@@ -139,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "GameManager.h",
               "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\GameManager.h",
               "RelativeDocumentMoniker": "GameManager.h",
@@ -151,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "FleeEnemy.h",
               "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\FleeEnemy.h",
               "RelativeDocumentMoniker": "FleeEnemy.h",
@@ -163,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "CounterAttackEnemy.h",
               "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\CounterAttackEnemy.h",
               "RelativeDocumentMoniker": "CounterAttackEnemy.h",
@@ -175,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "EnemyDecorator.h",
               "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\EnemyDecorator.h",
               "RelativeDocumentMoniker": "EnemyDecorator.h",
@@ -187,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
               "Title": "ConcreteEnemy.h",
               "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\ConcreteEnemy.h",
               "RelativeDocumentMoniker": "ConcreteEnemy.h",
@@ -199,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 11,
               "Title": "Enemy.h",
               "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Enemy.h",
               "RelativeDocumentMoniker": "Enemy.h",
@@ -211,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "Player.h",
               "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Player.h",
               "RelativeDocumentMoniker": "Player.h",
@@ -219,12 +235,11 @@
               "RelativeToolTip": "Player.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-08T01:54:07.061Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T01:54:07.061Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 13,
               "Title": "Entity.h",
               "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Entity.h",
               "RelativeDocumentMoniker": "Entity.h",
@@ -232,8 +247,7 @@
               "RelativeToolTip": "Entity.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-08T01:52:27.483Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T01:52:27.483Z"
             },
             {
               "$type": "Document",
@@ -261,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 16,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\TUS_3rdYear\\Soft Dev Gaming 3 (Adrielle_Bryan)\\Project Assignment\\SoftDevGaming-Project\\SoftDevGaming_Project\\Main.cpp",
               "RelativeDocumentMoniker": "Main.cpp",
@@ -269,8 +283,7 @@
               "RelativeToolTip": "Main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-08T01:51:27.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T01:51:27.154Z"
             }
           ]
         },

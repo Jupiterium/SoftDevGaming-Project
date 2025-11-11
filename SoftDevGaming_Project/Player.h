@@ -19,7 +19,7 @@ private:
 public:
 	Player(string n, int x, int y);
 
-	// Overridden virtual methods
+	// Overridden pure virtual methods (require implementation)
 	void Attack(Entity* target) override;
 	void DisplayStatus() const override;
 

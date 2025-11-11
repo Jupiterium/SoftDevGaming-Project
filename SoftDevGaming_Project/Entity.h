@@ -22,15 +22,18 @@ public:
     virtual ~Entity() {}
 
     // Getters/Helpers
+    string getName() const;
     int getHealth() const;
     void setHealth(int h);
-    string getName() const;
+    int getAttack() const;
     bool isAlive() const;
+    int getX() const; 
+    int getY() const; 
 
     // Pure virtual, abstract methods (must be overridden)
     virtual void Attack(Entity* target) = 0;
     virtual void DisplayStatus() const = 0;
 
-    // Virtual methods (can be overridden)
+    // Virtual method (can be overridden)
     virtual void takeDamage(int d);
 };
