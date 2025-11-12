@@ -11,9 +11,7 @@
 class FleeEnemy : public EnemyDecorator {
 public:
     // Inherits the constructor
-    using EnemyDecorator::EnemyDecorator;
-
-    // Overridden method
-    void Attack(Entity* target) override;
+    FleeEnemy(Enemy* enemy) : EnemyDecorator(enemy) {}
+    void Flee(int mapWidth, int mapHeight);
 };
 

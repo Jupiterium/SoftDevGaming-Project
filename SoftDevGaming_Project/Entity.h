@@ -30,6 +30,9 @@ public:
     int getX() const;
     int getY() const;
 
+    int setX(int x);
+    int setY(int y);
+
     // Pure virtual, abstract methods (must be overridden)
     virtual void Attack(Entity* target) = 0;
     virtual void DisplayStatus() const = 0;

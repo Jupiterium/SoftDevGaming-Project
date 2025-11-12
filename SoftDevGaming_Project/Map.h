@@ -8,7 +8,7 @@ using namespace std;
 
 /* 
 * Purpose of this class: 
-* Manages the grid-based world (ASCII map, which is composed of Tile objects 
+* Manages the grid-based world (ASCII map, which is composed of Tile objects )
 */
 
 class Map 
@@ -26,9 +26,7 @@ public:
 	void ReplaceTile(char new_char, int x, int y);
 
 	// Environment generation methods
-	void GenerateBushLayout();
-	void GenerateTrees(int count);
-	void GenerateWater(int count);
+	void GenerateHiddenGrid();
 	
 	// Overloaded operator to print the map
 	friend ostream& operator<<(ostream& out, const Map& map);

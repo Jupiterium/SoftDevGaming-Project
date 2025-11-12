@@ -15,4 +15,6 @@ public:
 
     // Overridden method
     void takeDamage(int d) override;
+    
+    void Attack(Entity* target) override;
 };

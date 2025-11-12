@@ -19,6 +19,9 @@ int Entity::getX() const { return x; }
 
 int Entity::getY() const { return y; }
 
+int Entity::setX(int x) { this->x = x; }
+int Entity::setX(int y) { this->y = y; }
+
 bool Entity::isAlive() const
 {
 	//if (health <= 0) { return false; }
