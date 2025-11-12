@@ -75,6 +75,15 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\Entities\Player</Filter>
     </ClCompile>
+    <ClCompile Include="FleeEnemy.cpp">
+      <Filter>Source Files\Entities\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="CounterAttackEnemy.cpp">
+      <Filter>Source Files\Entities\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyFactory.cpp">
+      <Filter>Source Files\Managers &amp; Controllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemy.h">

@@ -19,8 +19,8 @@ int Entity::getX() const { return x; }
 
 int Entity::getY() const { return y; }
 
-int Entity::setX(int x) { this->x = x; }
-int Entity::setX(int y) { this->y = y; }
+int Entity::setX(int x) { return this->x; }
+int Entity::setY(int y) { return this->y; }
 
 bool Entity::isAlive() const
 {

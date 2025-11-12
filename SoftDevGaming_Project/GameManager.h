@@ -25,4 +25,14 @@ public:
     void InitGame();
     void MainLoop();
     void NextLevel();
+
+    /*
+    * Deallocate memory
+    * 
+    for (auto& e : enemyList) {
+    delete e.enemy;
+    }
+    enemyList.clear();
+    
+    */
 };

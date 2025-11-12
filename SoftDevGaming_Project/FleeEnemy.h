@@ -13,5 +13,6 @@ public:
     // Inherits the constructor
     FleeEnemy(Enemy* enemy) : EnemyDecorator(enemy) {}
     void Flee(int mapWidth, int mapHeight);
+    ~FleeEnemy() override {}
 };
 

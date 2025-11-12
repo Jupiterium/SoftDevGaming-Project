@@ -16,5 +16,6 @@ public:
 	Enemy(string n, int h, int a, int x, int y);
 	virtual void Attack(Entity* target);
 	virtual void DisplayStatus() const;
-	// This class remains abstract by not implementing Attack() or DisplayStatus() from Entity.
+
+	virtual ~Enemy() {}
 };

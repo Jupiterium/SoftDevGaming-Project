@@ -1,6 +1,8 @@
 
 #include <iostream>
 #include "Map.h"
+#include "EnemyFactory.h"
+#include "Enemy.h"
 
 int main()
 {
@@ -15,5 +17,27 @@ int main()
     map.ReplaceTile('X', 19, 9);
 
     std::cout << map;
+
+
+    // === TEST ENEMY FACTORY ===
+    cout << "\n=== Enemy Factory Test ===\n";
+
+    vector<EnemySpawnData> enemies = EnemyFactory::CreateEnemiesForLevel(1);
+
+    // Display enemies
+    for (const auto& e : enemies) {
+        cout << "Enemy: " << e.enemy->getName()
+            << " | HP: " << e.enemy->getHealth()
+            << " | ATK: " << e.enemy->getAttack()
+            << " | Pos: (" << e.x << "," << e.y << ")\n";
+    }
+
+    // Clean up dynamically allocated enemies
+    for (auto& e : enemies) {
+        delete e.enemy;
+        e.enemy = nullptr; // optional, safer
+    }
+
+    enemies.clear();
     return 0;
 }

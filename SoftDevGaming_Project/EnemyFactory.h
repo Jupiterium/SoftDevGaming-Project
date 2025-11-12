@@ -9,14 +9,20 @@
 * Also promotes Separation of Concerns principle. GameManager manages the game, EnemyFactory creates enemies.
 */
 
-class EnemyFactory 
-{
+struct EnemySpawnData {
+    int x;
+    int y;
+    Enemy* enemy;
+};
+
+class EnemyFactory {
 private:
-    // Private constructor so there's no acces to it by others
-    EnemyFactory();
+    EnemyFactory(); // private to prevent instantiation
 
 public:
-    // Static methods to create enemies
+    // Creates a single enemy type based on level or type ID
     static Enemy* CreateEnemy(int level);
-    static vector<Enemy*> CreateEnemiesForLevel(int level);
+
+    // Creates and returns all enemies for a level with fixed coordinates
+    static std::vector<EnemySpawnData> CreateEnemiesForLevel(int level);
 };

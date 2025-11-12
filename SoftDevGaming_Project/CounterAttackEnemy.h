@@ -17,4 +17,5 @@ public:
     void takeDamage(int d) override;
     
     void Attack(Entity* target) override;
+    ~CounterAttackEnemy() override {}
 };

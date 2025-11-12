@@ -20,4 +20,5 @@ public:
     virtual void Attack(Entity* target) override;
     virtual void DisplayStatus() const override;
     virtual void takeDamage(int d) override;
+    virtual ~EnemyDecorator() { delete wrappedEnemy; }
 };

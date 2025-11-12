@@ -39,4 +39,5 @@ public:
 
     // Virtual method (can be overridden)
     virtual void takeDamage(int d);
+
 };
