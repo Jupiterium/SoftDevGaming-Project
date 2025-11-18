@@ -6,21 +6,19 @@ using namespace std;
 // We only set the Player's *own* variables (score) in the body.
 Player::Player(string n, int x, int y) : Entity(n, 100, 10, x, y)
 {
-    // Player-specific variable
-    score = 0;
+	score = 0; // Player-specific variable
 }
-
 
 // Overridden methods (the methods which require implementation)
 void Player::Attack(Entity* target)
 {
-    cout << "\n" << this->name << " attacks " << target->getName() << "!" << endl;
-    target->takeDamage(this->attack);
+	cout << "\n" << this->name << " attacks " << target->getName() << "!" << endl;
+	target->takeDamage(this->attack);
 }
 
 void Player::DisplayStatus() const
 {
-    cout << "> Player: " << this->name << " | HP: " << this->health << " | ATK: " << this->attack << " | Score: " << this->score << endl;
+	cout << "> Player: " << this->name << " | HP: " << this->health << " | ATK: " << this->attack << " | Score: " << this->score << endl;
 }
 
 // Getter
@@ -31,53 +29,51 @@ int Player::getScore() const { return score; }
 // The main logic for these is called by the Managers
 void Player::move(char direction)
 {
-    // Update Player's position based on the direction from the input 
-    switch (direction)
-    {
-    case 'w': this->y--; break;
-    case 'a': this->x--; break;
-    case 's': this->y++; break;
-    case 'd': this->x++; break;
-    }
+	// Update Player's position based on the direction from the input 
+	switch (direction)
+	{
+	case 'w': this->y--; break;
+	case 'a': this->x--; break;
+	case 's': this->y++; break;
+	case 'd': this->x++; break;
+	}
 }
 
 void Player::defend()
 {
-    cout << this->name << " is defending!" << endl;
+	cout << this->name << " is defending!" << endl;
 }
 
 void Player::addItemToInv(const Item& item)
 {
-    cout << item.getName() << " was added to your inventory!" << endl;
-    inventory.push_back(item);
+	cout << item.getName() << " was added to your inventory!" << endl;
+	inventory.push_back(item);
 }
 
 void Player::useItem(int invSlot)
 {
-    if (invSlot < 0 || invSlot >= inventory.size())
-    {
-        cout << "Invalid item slot." << endl;
-        return;
-    }
+	if (invSlot < 0 || invSlot >= inventory.size())
+	{
+		cout << "Invalid item slot." << endl;
+		return;
+	}
 
-    Item& item = inventory[invSlot];
+	Item& item = inventory[invSlot];
 
-    cout << this->name << " uses the " << item.getName() << "!" << endl;
+	cout << this->name << " uses the " << item.getName() << "!" << endl;
 
-    // Check for an item type
-    if (item.getType() == "potion")
-    {
-        this->setHealth(this->getHealth() + item.getBoostAmount());
-        cout << "You feel healthier!" << endl;
-    }
+	// Check for an item type
+	if (item.getType() == "potion")
+	{
+		this->setHealth(this->getHealth() + item.getBoostAmount());
+		cout << "You feel healthier!" << endl;
+	}
 
-    // TODO: Add more item types
-    
-    // Erase the item from the inventory after using it
-    inventory.erase(inventory.begin() + invSlot);
+	// TODO: Add more item types
+
+	// Erase the item from the inventory after using it
+	inventory.erase(inventory.begin() + invSlot);
 }
 
 // Add score to our player
-void Player::addScore(int amount) {
-    score += amount;
-}
+void Player::addScore(int amount) { score += amount; }

@@ -17,9 +17,7 @@ void CounterAttackEnemy::takeDamage(int d)
 		if (chance < 40) { // 40% chance
 			cout << ">>> " << wrappedEnemy->getName() << " counterattacks in rage!" << endl;
 
-			// We need a target for the counter-attack. 
-			// ideally, takeDamage should accept an (Entity* attacker)
-			// For now, we just print the message, or you could add logic here if you had the pointer.
+			// TODO: Fix takeDamage by making it accept a pointer (Entity* attacker)
 		}
 	}
 	// If enemy is dead
