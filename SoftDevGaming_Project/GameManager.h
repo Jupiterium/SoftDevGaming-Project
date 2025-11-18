@@ -2,37 +2,32 @@
 
 #include "Player.h"
 #include "Map.h"
+#include "EnemyFactory.h"
+#include <vector>
 
-/*
-* Purpose of this Class:
-* The class that controls the main game loop, levels, and transitions.
-*/
-
-class GameManager 
+class GameManager
 {
 private:
-    Player player;
-    Map currentMap;
-    int currentLevel;
-    bool isRunning;
+	Player player;
+	Map currentMap; 
+	int currentLevel;
+	bool isRunning;
 
-    // Helper methods
-    void HandleInput();
-    void UpdateGameState();
+	// We store enemies here to manage them
+	std::vector<Enemy*> enemies;
+
+	// Helper methods
+	void HandleInput();
+	void UpdateGameState();
+
+	// Helper to clean up map visuals before moving entities
+	void ClearEntityPos(int x, int y);
+	void DrawEntityPos(char symbol, int x, int y);
 
 public:
-    GameManager();
-    void InitGame();
-    void MainLoop();
-    void NextLevel();
-
-    /*
-    * Deallocate memory
-    * 
-    for (auto& e : enemyList) {
-    delete e.enemy;
-    }
-    enemyList.clear();
-    
-    */
+	GameManager();
+	~GameManager(); // Destructor to clean up enemies
+	void InitGame();
+	void MainLoop();
+	void NextLevel();
 };

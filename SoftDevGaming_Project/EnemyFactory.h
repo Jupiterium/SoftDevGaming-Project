@@ -1,5 +1,4 @@
 #pragma once
-
 #include <vector>
 #include "Enemy.h"
 
@@ -9,20 +8,15 @@
 * Also promotes Separation of Concerns principle. GameManager manages the game, EnemyFactory creates enemies.
 */
 
-struct EnemySpawnData {
-    int x;
-    int y;
-    Enemy* enemy;
-};
-
-class EnemyFactory {
+class EnemyFactory 
+{
 private:
-    EnemyFactory(); // private to prevent instantiation
+    EnemyFactory() {}
 
 public:
-    // Creates a single enemy type based on level or type ID
-    static Enemy* CreateEnemy(int level);
+    // Helper to create a specific type of enemy at a specific location
+    static Enemy* CreateEnemy(int typeId, int x, int y);
 
-    // Creates and returns all enemies for a level with fixed coordinates
-    static std::vector<EnemySpawnData> CreateEnemiesForLevel(int level);
+    // Creates the list of enemies for the GameManager
+    static std::vector<Enemy*> CreateEnemiesForLevel(int level);
 };

@@ -30,6 +30,7 @@ public:
 	
 	// Overloaded operator to print the map
 	friend ostream& operator<<(ostream& out, const Map& map);
+
+	// Getter for the tile
+	Tile& getTile(int x, int y);
 };
-
-

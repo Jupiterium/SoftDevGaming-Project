@@ -31,4 +31,6 @@ public:
 	void defend();
 	void addItemToInv(const Item& item);
 	void useItem(int invSlot);
+
+	void addScore(int amount);
 };

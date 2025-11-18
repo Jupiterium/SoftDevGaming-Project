@@ -35,3 +35,10 @@ void Entity::takeDamage(int d)
 	health -= d;
 	if (health < 0) { health = 0; } // Don't let health go negative
 }
+
+// Method to move the player for level changes
+void Entity::setPosition(int newX, int newY) 
+{
+	x = newX;
+	y = newY;
+}

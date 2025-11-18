@@ -74,3 +74,8 @@ void Player::useItem(int invSlot)
     // Erase the item from the inventory after using it
     inventory.erase(inventory.begin() + invSlot);
 }
+
+// Add score to our player
+void Player::addScore(int amount) {
+    score += amount;
+}

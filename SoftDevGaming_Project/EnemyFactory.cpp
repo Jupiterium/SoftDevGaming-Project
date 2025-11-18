@@ -1,37 +1,48 @@
 #include "EnemyFactory.h"
+#include "ConcreteEnemy.h" 
 #include "CounterAttackEnemy.h"
-#include "FleeEnemy.h"
-#include <iostream>
+#include "FleeEnemy.h"   
 using namespace std;
 
-EnemyFactory::EnemyFactory() {}
+// Helper method implementation which creates 
+// a specific enemy type at specific coordinates.
+Enemy* EnemyFactory::CreateEnemy(int typeId, int x, int y) 
+{
+    switch (typeId) {
+    case 1: // Slime (Weak)
+        return new ConcreteEnemy("Slime", 10, 3, x, y);
 
-// Create a single enemy based on level (you can expand this logic easily)
-Enemy* EnemyFactory::CreateEnemy(int level) {
-    switch (level) {
-    case 1:
-        return new Enemy("Slime", 10, 3, 1, 1);
-    case 2:
-        return new FleeEnemy(new Enemy("Goblin", 15, 5, 2, 2));
-    case 3:
-        return new CounterAttackEnemy(new Enemy("Orc", 25, 7, 3, 3));
-    default:
-        return new Enemy("Unknown Creature", 5, 2, 1, 1);
+    case 2: // Goblin (Fleeing)
+        // Note: Decorator takes a pointer to the concrete enemy
+        return new FleeEnemy(new ConcreteEnemy("Goblin", 15, 5, x, y));
+
+    case 3: // Orc (Counter-Attacking)
+        return new CounterAttackEnemy(new ConcreteEnemy("Orc", 25, 7, x, y));
+
+    default: // Default fallback
+        return new ConcreteEnemy("Unknown", 5, 1, x, y);
     }
 }
 
-// Creates predefined enemies with known coordinates
-std::vector<EnemySpawnData> EnemyFactory::CreateEnemiesForLevel(int level) {
-    std::vector<EnemySpawnData> enemies;
+// Generates the list for the level
+vector<Enemy*> EnemyFactory::CreateEnemiesForLevel(int level) 
+{
+    vector<Enemy*> enemies;
 
-    if (level == 1) {
-        enemies.push_back({ 3, 5, CreateEnemy(1) });  // Slime at (3,5)
-        enemies.push_back({ 7, 2, CreateEnemy(2) });  // Goblin at (7,2)
-        enemies.push_back({ 9, 9, CreateEnemy(3) });  // Orc at (9,9)
+    if (level == 1) 
+    {
+        // Level 1: Simple mix
+        // Usage: CreateEnemy(TypeID, X, Y)
+        enemies.push_back(CreateEnemy(1, 3, 5));  // Slime at 3,5
+        enemies.push_back(CreateEnemy(2, 7, 2));  // Goblin at 7,2
+        enemies.push_back(CreateEnemy(3, 9, 9));  // Orc at 9,9
     }
-    else if (level == 2) {
-        enemies.push_back({ 2, 3, CreateEnemy(2) });
-        enemies.push_back({ 8, 6, CreateEnemy(3) });
+    else if (level == 2) 
+    {
+        // Level 2: Harder mix
+        enemies.push_back(CreateEnemy(2, 2, 3));
+        enemies.push_back(CreateEnemy(3, 8, 6));
+        enemies.push_back(CreateEnemy(3, 12, 4));
     }
 
     return enemies;

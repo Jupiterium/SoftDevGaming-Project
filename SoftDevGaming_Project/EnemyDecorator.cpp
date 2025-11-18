@@ -23,4 +23,7 @@ void EnemyDecorator::DisplayStatus() const
 void EnemyDecorator::takeDamage(int d)
 {
     wrappedEnemy->takeDamage(d);
+
+    // This ensures CombatController sees the correct HP when checking isAlive()
+    this->health = wrappedEnemy->getHealth();
 }

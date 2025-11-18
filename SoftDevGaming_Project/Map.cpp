@@ -39,6 +39,10 @@ void Map::GenerateHiddenGrid() {
     }
 }
 
+Tile& Map::getTile(int x, int y) {
+    return mapTile[y][x];
+}
+
 ostream& operator<<(ostream& out, const Map& map) {
     // Top border
     out << '+';

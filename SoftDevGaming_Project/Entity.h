@@ -40,4 +40,6 @@ public:
     // Virtual method (can be overridden)
     virtual void takeDamage(int d);
 
+    // Method to move the player for level changes
+    void setPosition(int newX, int newY);
 };
