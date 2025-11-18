@@ -71,6 +71,8 @@ void Player::useItem(int invSlot)
         cout << "You feel healthier!" << endl;
     }
 
+    // TODO: Add more item types
+    
     // Erase the item from the inventory after using it
     inventory.erase(inventory.begin() + invSlot);
 }

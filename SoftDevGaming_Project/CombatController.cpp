@@ -35,21 +35,21 @@ bool CombatController::StartBattle(Player& p, Enemy& e)
     // Battle Over results
     if (p.isAlive())
     {
-        cout << "\nVICTORY! You defeated the " << e.getName() << "!" << endl;
+        cout << "\nVictory! You defeated the " << e.getName() << "!" << endl;
         cout << "Press any key to continue..." << endl;
         _getch();
         return true; // Player won
     }
     else
     {
-        cout << "\nDEFEAT... You have fallen." << endl;
+        cout << "\nDefeat... You have fallen." << endl;
         return false; // Player lost
     }
 }
 
 void CombatController::PlayerTurn(Player& p, Enemy& e)
 {
-    cout << "\n--- Your Turn ---" << endl;
+    cout << "\n--- YOUR TURN ---" << endl;
     p.DisplayStatus();
     e.DisplayStatus();
 
@@ -70,13 +70,13 @@ void CombatController::PlayerTurn(Player& p, Enemy& e)
         // Simple hardcoded slot 0 for now, or ask for input
         p.useItem(0); break;
     default:
-        cout << "You hesitated and lost your turn!" << endl;
+        cout << "You hesitated and lost your turn!" << endl; // Any other input and you're cooked :)
         break;
     }
 }
 
 void CombatController::EnemyTurn(Enemy& e, Player& p)
 {
-    cout << "\n--- Enemy Turn ---" << endl;
+    cout << "\n--- ENEMY TURN ---" << endl;
     e.Attack(&p);
 }

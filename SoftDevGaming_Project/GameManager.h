@@ -27,7 +27,13 @@ private:
 public:
 	GameManager();
 	~GameManager(); // Destructor to clean up enemies
+
+	// Initialize the game (grid, places, enemies)
 	void InitGame();
+
+	// Main Loop of the game (input -> update -> draw)
 	void MainLoop();
+
+	// Move to next level
 	void NextLevel();
 };

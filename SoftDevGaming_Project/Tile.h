@@ -9,7 +9,7 @@ using namespace std;
 */
 
 class Tile {
-	int symbol;  //refer to ascii table for character
+	int symbol;  // Refer to ASCII table for character
 
 public:
 	Tile(char symbol = ' ') {

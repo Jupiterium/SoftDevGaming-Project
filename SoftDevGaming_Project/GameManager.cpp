@@ -5,8 +5,8 @@
 #include <conio.h> // For _getch()
 using namespace std;
 
-// Constructor: Initializes Player at (1,1) and Map at (15, 10)
-GameManager::GameManager() : player("Hero", 1, 1), currentMap(15, 10), currentLevel(1), isRunning(true) {}
+// Constructor initializes Player at (1,1) and Map at (15, 10)
+GameManager::GameManager() : player("Labubu", 1, 1), currentMap(15, 10), currentLevel(1), isRunning(true) {}
 
 // Destructor to clean up memory
 GameManager::~GameManager() 
@@ -25,6 +25,8 @@ void GameManager::InitGame()
 
     // Place a Treasure
     currentMap.ReplaceTile('T', 8, 5);
+
+    //TODO: Add items
 
     // Draw Features using helper
     DrawEntityPos('X', 13, 8); // Exit
@@ -60,7 +62,7 @@ void GameManager::MainLoop()
 
     if (!player.isAlive())
     {
-        cout << "\nGAME OVER. You died." << endl;
+        cout << "\nYou Died, Game Over!" << endl;
     }
 }
 
@@ -121,9 +123,12 @@ void GameManager::UpdateGameState()
 
 void GameManager::HandleInput()
 {
-    if (_kbhit())
+    // Checks if a key is currently being pressed
+    if (_kbhit()) // _kbhit() (Keyboard Hit) peeks to see if a key is waiting
     {
-        char key = _getch();
+        // Grabs the keyboard hit key immediately
+        char key = _getch(); // _getch (Get Character)
+
         int oldX = player.getX();
         int oldY = player.getY();
         int nextX = oldX;
@@ -141,8 +146,7 @@ void GameManager::HandleInput()
 
         if (currentMap.isWalkable(nextX, nextY))
         {
-            // 1. Check for Treasure BEFORE moving
-            // (Assuming your Tile class has getSymbol() or similar)
+            // Check for treasure before moving
             char nextTileChar = currentMap.getTile(nextX, nextY).getChar();
 
             if (nextTileChar == 'T')
@@ -157,7 +161,7 @@ void GameManager::HandleInput()
             // Update Player Data
             player.move(key);
 
-            // raw Player at new position
+            // Place the Player at new position
             DrawEntityPos('P', player.getX(), player.getY());
         }
     }
@@ -180,7 +184,7 @@ void GameManager::NextLevel()
 {
     currentLevel++;
     cout << "Level Complete! Moving to Level " << currentLevel << "..." << endl;
-    _getch();
+    _getch(); // Grab the pressed character 
 
     // Reset the player's position to the start of the map
     player.setPosition(1, 1);
