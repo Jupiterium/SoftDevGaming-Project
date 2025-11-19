@@ -31,11 +31,13 @@ bool CombatController::StartBattle(Player& p, Enemy& e)
 		cout << "\nVictory! You defeated the " << e.getName() << "!" << endl;
 		cout << "Press any key to continue..." << endl;
 		_getch(); // Grab the character pressed
+		system("cls");
 		return true; // Player won
 	}
 	else
 	{
 		cout << "\nDefeat... You have fallen." << endl;
+		system("cls");
 		return false; // Player lost
 	}
 }

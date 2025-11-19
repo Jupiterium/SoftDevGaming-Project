@@ -3,7 +3,22 @@
 #include "GameData.h"
 #include <iostream>
 #include <conio.h> // For _getch()
+#include <windows.h>
 using namespace std;
+
+void SetCursorPosition(int x, int y) {
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD pos = { (SHORT)x, (SHORT)y };
+    SetConsoleCursorPosition(hOut, pos);
+}
+
+void HideCursor() {
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_CURSOR_INFO cursorInfo;
+    GetConsoleCursorInfo(hOut, &cursorInfo);
+    cursorInfo.bVisible = false;
+    SetConsoleCursorInfo(hOut, &cursorInfo);
+}
 
 // Constructor initializes Player at (1,1) and Map at (15, 10)
 GameManager::GameManager() : player("Labubu", 1, 1), currentMap(15, 10), currentLevel(1), isRunning(true) {}
@@ -17,16 +32,14 @@ GameManager::~GameManager()
 
 void GameManager::InitGame()
 {
+    system("cls");
+    HideCursor();
     // Initialize Map visual features for Level 1
     currentMap.GenerateHiddenGrid(); // Reset to dots
 
-    // Place an Exit
-    currentMap.ReplaceTile('X', 13, 8);
-
-    // Place a Treasure
-    currentMap.ReplaceTile('T', 8, 5);
-
-    //TODO: Add items
+    //Add Items
+    //Sword
+    auto item = Item("Sword", "Weapon", 's', 30);
 
     // Draw Features using helper
     DrawEntityPos('X', 13, 8); // Exit
@@ -50,10 +63,13 @@ void GameManager::InitGame()
     cout << "Welcome to the Forest Survival Adventure!" << endl;
     cout << "Press any key to start..." << endl;
     _getch();
+    system("cls");
+
 }
 
 void GameManager::MainLoop()
 {
+    system("cls");
     while (isRunning && player.isAlive())
     {
         UpdateGameState();
@@ -68,7 +84,8 @@ void GameManager::MainLoop()
 
 void GameManager::UpdateGameState()
 {
-    system("cls"); // Clear console
+   /* system("cls");*/ // Clear console
+    SetCursorPosition(0, 0);
 
     // 1. Print the Map
     // The map already contains the P, E, X, T chars because we updated them in HandleInput/Init
@@ -110,15 +127,23 @@ void GameManager::UpdateGameState()
             }
         }
     }
+    
+    //4. Check for Items
+    //TODO: Add items to inventory so that can be used for attack purpose
+    
 
-    // 4. Check Win Condition (Reaching 'X')
+    // 5. Check Win Condition (Reaching 'X')
     // We check the tile *under* the player. 
     // Note: Since we replaced the tile with 'P', we might need to check logic differently.
     // A simple way is checking coordinates against known Exit coordinates.
     if (player.getX() == 13 && player.getY() == 8)
     {
         NextLevel();
+
     }
+
+    
+
 }
 
 void GameManager::HandleInput()
