@@ -1,33 +1,34 @@
 #include "GameManager.h"
 #include "CombatController.h"
 #include "GameData.h"
+#include "Item.h"
 #include <iostream>
 #include <conio.h> // For _getch()
 #include <windows.h>
 using namespace std;
 
-void SetCursorPosition(int x, int y) {
-    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-    COORD pos = { (SHORT)x, (SHORT)y };
-    SetConsoleCursorPosition(hOut, pos);
+template<typename T>
+void GameManager::ClearPtrVector(vector<T*>& v) {
+    for (auto p : v) delete p;
+    v.clear();
 }
 
-void HideCursor() {
-    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-    CONSOLE_CURSOR_INFO cursorInfo;
-    GetConsoleCursorInfo(hOut, &cursorInfo);
-    cursorInfo.bVisible = false;
-    SetConsoleCursorInfo(hOut, &cursorInfo);
+template<typename T>
+void GameManager::DrawEntities(const vector<T*>& list, Map& m) {
+    for (auto e : list)
+        m.ReplaceTile(e->getSymbol(), e->getX(), e->getY());
 }
+
 
 // Constructor initializes Player at (1,1) and Map at (15, 10)
-GameManager::GameManager() : player("Labubu", 1, 1), currentMap(15, 10), currentLevel(1), isRunning(true) {}
+GameManager::GameManager() : player("Labubu", 'P', 100,  1, 1), currentMap(15, 10), currentLevel(1), isRunning(true) {}
 
 // Destructor to clean up memory
 GameManager::~GameManager() 
 {
-    for (auto e : enemies) delete e;
-    enemies.clear();
+    ClearPtrVector(enemies);
+
+    ClearPtrVector(itemList);
 }
 
 void GameManager::InitGame()
@@ -39,26 +40,29 @@ void GameManager::InitGame()
 
     //Add Items
     //Sword
-    auto item = Item("Sword", "Weapon", 's', 30);
+    ClearPtrVector(itemList);
+
+    itemList = Item::createItemList();
+
+    // Draw Enemies
+    DrawEntities(itemList, currentMap);
+
 
     // Draw Features using helper
     DrawEntityPos('X', 13, 8); // Exit
     DrawEntityPos('T', 8, 5);  // Treasure
+    
 
     // Create Enemies
     // Clear old enemies if restarting
-    for (auto e : enemies) delete e;
-    enemies.clear();
-
+    ClearPtrVector(enemies);
     enemies = EnemyFactory::CreateEnemiesForLevel(currentLevel);
 
     // Draw Enemies
-    for (auto e : enemies) {
-        DrawEntityPos('E', e->getX(), e->getY());
-    }
+    DrawEntities(enemies, currentMap);
 
     // Draw Player
-    DrawEntityPos('P', player.getX(), player.getY());
+    DrawEntityPos(player.getSymbol(), player.getX(), player.getY());
 
     cout << "Welcome to the Forest Survival Adventure!" << endl;
     cout << "Press any key to start..." << endl;
@@ -130,7 +134,18 @@ void GameManager::UpdateGameState()
     
     //4. Check for Items
     //TODO: Add items to inventory so that can be used for attack purpose
-    
+    for (int i = 0; i < itemList.size(); ++i)
+    {
+        // Check for collision
+        if (player.getX() == itemList[i]->getX() && player.getY() == itemList[i]->getY())
+        {
+            player.addItemToInv(*itemList[i]);
+            delete itemList[i];
+            itemList.erase(itemList.begin() + i);
+
+            break;
+        }
+    }
 
     // 5. Check Win Condition (Reaching 'X')
     // We check the tile *under* the player. 
@@ -217,4 +232,19 @@ void GameManager::NextLevel()
     // Re-initialize the map and enemies
     // InitGame() will redraw the 'P' at the new (1,1) coordinates
     InitGame();
+}
+
+
+void GameManager::SetCursorPosition(int x, int y) {
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD pos = { (SHORT)x, (SHORT)y };
+    SetConsoleCursorPosition(hOut, pos);
+}
+
+void GameManager::HideCursor() {
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_CURSOR_INFO cursorInfo;
+    GetConsoleCursorInfo(hOut, &cursorInfo);
+    cursorInfo.bVisible = false;
+    SetConsoleCursorInfo(hOut, &cursorInfo);
 }

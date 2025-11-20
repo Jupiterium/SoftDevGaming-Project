@@ -44,31 +44,56 @@ bool CombatController::StartBattle(Player& p, Enemy& e)
 
 void CombatController::PlayerTurn(Player& p, Enemy& e)
 {
-	cout << "\n--- YOUR TURN ---" << endl;
-	p.DisplayStatus();
-	e.DisplayStatus();
+    cout << "\n--- YOUR TURN ---" << endl;
+    p.DisplayStatus();
+    e.DisplayStatus();
 
-	cout << "[1] Attack\n[2] Defend\n[3] Use Item" << endl;
-	cout << "Choose action: ";
+    cout << "[1] Attack\n[2] Defend\n[3] Use Item" << endl;
+    cout << "Choose action: ";
 
-	char choice;
-	choice = _getch();
-	cout << choice << endl;
+    char choice = _getch();
+    cout << choice << endl;
 
-	switch (choice)
-	{
-	case '1':
-		p.Attack(&e); break;
-	case '2':
-		p.defend(); break;
-	case '3':
-		// Simple hardcoded slot 0 for now, or ask for input
-		p.useItem(0); break;
-	default:
-		cout << "You hesitated and lost your turn!" << endl; // Any other input and you're cooked :)
-		break;
-	}
+    switch (choice)
+    {
+    case '1':
+        p.Attack(&e);
+        break;
+
+    case '2':
+        p.defend();
+        break;
+
+    case '3':
+    {
+        if (p.getInventory().empty())
+        {
+            cout << "You have no items." << endl;
+            break;
+        }
+
+        cout << "\nYour Items:\n";
+        for (int i = 0; i < p.getInventory().size(); i++)
+        {
+            cout << "[" << i << "] " << p.getInventory()[i].getName() << endl;
+        }
+
+        cout << "Choose item slot: ";
+        char slotChar = _getch();
+        cout << slotChar << endl;
+
+        int slot = slotChar - '0'; // convert char to int
+
+        p.useItem(slot);
+        break;
+    }
+
+    default:
+        cout << "You hesitated and lost your turn!" << endl;
+        break;
+    }
 }
+
 
 void CombatController::EnemyTurn(Enemy& e, Player& p)
 {

@@ -10,19 +10,19 @@ Enemy* EnemyFactory::CreateEnemy(int typeId, int x, int y)
 {
     switch (typeId) {
     case 1: // Slime (Weak)
-        return new ConcreteEnemy("Slime", 10, 3, x, y);
+        return new ConcreteEnemy("Slime", 'E', 10, 3, x, y);
 
     case 2: // Goblin (Fleeing)
         // Note: Decorator takes a pointer to the concrete enemy
-        return new FleeEnemy(new ConcreteEnemy("Goblin", 15, 5, x, y));
+        return new FleeEnemy(new ConcreteEnemy("Goblin", 'E', 15, 5, x, y));
 
     case 3: // Orc (Counter-Attacking)
-        return new CounterAttackEnemy(new ConcreteEnemy("Orc", 25, 7, x, y));
+        return new CounterAttackEnemy(new ConcreteEnemy("Orc", 'E', 25, 7, x, y));
 
         // TODO: Add more enemies
 
     default: // Default fallback
-        return new ConcreteEnemy("Unknown", 5, 1, x, y);
+        return new ConcreteEnemy("Unknown", 'E', 5, 1, x, y);
     }
 }
 

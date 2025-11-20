@@ -12,7 +12,7 @@ using namespace std;
 class ConcreteEnemy : public Enemy
 {
 public:
-	ConcreteEnemy(string n, int h, int a, int x, int y);
+	ConcreteEnemy(string n, char c, int h, int a, int x, int y);
 
 	// Concrete implementation of the virtual methods 
 	void Attack(Entity* target) override;

@@ -13,16 +13,18 @@ class Entity
 {
 protected:
     string name;
+    char symbol;
     int health;
     int attack;
     int x, y; // Position on the map
 
 public:
-    Entity(string n, int h, int a, int x, int y);
+    Entity(string n, char c, int h, int a, int x, int y);
     virtual ~Entity() {}
 
     // Getters/Helpers
     string getName() const;
+    char getSymbol() const;
     int getHealth() const;
     void setHealth(int h);
     int getAttack() const;
@@ -32,6 +34,7 @@ public:
 
     int setX(int x);
     int setY(int y);
+    void setAttack(int a);
 
     // Pure virtual, abstract methods (must be overridden)
     virtual void Attack(Entity* target) = 0;

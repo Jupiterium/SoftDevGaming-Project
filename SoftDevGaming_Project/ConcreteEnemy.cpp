@@ -4,7 +4,7 @@
 using namespace std;
 
 // The ConcreteEnemy's constructor to Enemy
-ConcreteEnemy::ConcreteEnemy(string n, int h, int a, int x, int y) : Enemy(n, h, a, x, y) {}
+ConcreteEnemy::ConcreteEnemy(string n, char c, int h, int a, int x, int y) : Enemy(n, c, h, a, x, y) {}
 
 // Implementation of the overridden virtual methods
 void ConcreteEnemy::Attack(Entity* target)

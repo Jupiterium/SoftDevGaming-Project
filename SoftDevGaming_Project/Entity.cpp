@@ -4,7 +4,7 @@
 using namespace std;
 
 // Implementation of Entity's constructor 
-Entity::Entity(string n, int h, int a, int x, int y) : name(n), health(h), attack(a), x(x), y(y) {}
+Entity::Entity(string n, char c, int h, int a, int x, int y) : name(n), symbol(c), health(h), attack(a), x(x), y(y) {}
 
 // Implementation of Getters/Helper methods
 int Entity::getHealth() const { return health; }
@@ -12,6 +12,8 @@ int Entity::getHealth() const { return health; }
 void Entity::setHealth(int h) { health = h; }
 
 string Entity::getName() const { return name; }
+
+char Entity::getSymbol() const { return symbol; }
 
 int Entity::getAttack() const { return attack; }
 
@@ -21,6 +23,8 @@ int Entity::getY() const { return y; }
 
 int Entity::setX(int x) { return this->x; }
 int Entity::setY(int y) { return this->y; }
+void Entity::setAttack(int a) { (this->attack) += a; }
+
 
 bool Entity::isAlive() const
 {

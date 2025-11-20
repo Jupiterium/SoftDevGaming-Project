@@ -4,7 +4,7 @@ using namespace std;
 
 // This is the key: we pass the Entity's data up using the initializer list.
 // We only set the Player's *own* variables (score) in the body.
-Player::Player(string n, int x, int y) : Entity(n, 100, 10, x, y)
+Player::Player(string n, char c, int health, int x, int y) : Entity(n, 'P', 100, 10, x, y)
 {
 	score = 0; // Player-specific variable
 }
@@ -23,6 +23,7 @@ void Player::DisplayStatus() const
 
 // Getter
 int Player::getScore() const { return score; }
+vector<Item>& Player::getInventory() { return inventory; }
 
 
 // The Player-specific methods
@@ -52,28 +53,38 @@ void Player::addItemToInv(const Item& item)
 
 void Player::useItem(int invSlot)
 {
-	if (invSlot < 0 || invSlot >= inventory.size())
-	{
-		cout << "Invalid item slot." << endl;
-		return;
-	}
+    if (inventory.empty())
+    {
+        cout << "No items available." << endl;
+        return;
+    }
 
-	Item& item = inventory[invSlot];
+    if (invSlot < 0 || invSlot >= inventory.size())
+    {
+        cout << "Invalid item slot." << endl;
+        return;
+    }
 
-	cout << this->name << " uses the " << item.getName() << "!" << endl;
+    Item& item = inventory[invSlot];
 
-	// Check for an item type
-	if (item.getType() == "potion")
-	{
-		this->setHealth(this->getHealth() + item.getBoostAmount());
-		cout << "You feel healthier!" << endl;
-	}
+    cout << this->name << " uses the " << item.getName() << "!" << endl;
 
-	// TODO: Add more item types
+    if (item.getType() == "potion")
+    {
+        this->setHealth(this->getHealth() + item.getBoostAmount());
+        cout << "You feel healthier!" << endl;
+    }
+    else if (item.getType() == "weapon")
+    {
+        this->setAttack(item.getBoostAmount());
+        cout << "Attack increased by " << item.getBoostAmount() << endl;
+    }
 
-	// Erase the item from the inventory after using it
-	inventory.erase(inventory.begin() + invSlot);
+    //TODO: Add more items
+
+    inventory.erase(inventory.begin() + invSlot);
 }
+
 
 // Add score to our player
 void Player::addScore(int amount) { score += amount; }

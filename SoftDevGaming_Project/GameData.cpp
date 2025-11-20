@@ -24,6 +24,7 @@ void GameData::SaveGame(const Player& player)
     {
         // Save order: Name, Health, Attack, Score, X, Y
         outFile << player.getName() << endl;
+        outFile << player.getSymbol() << endl;
         outFile << player.getHealth() << endl;
         outFile << player.getScore() << endl; // Assuming Score stores progress
         outFile << player.getX() << endl;
@@ -44,10 +45,12 @@ void GameData::LoadGame(Player& player)
     if (inFile.is_open())
     {
         string name;
+        char c;
         int hp, score, x, y;
 
         // Read in the same order we saved
         getline(inFile, name);
+        inFile >> c;
         inFile >> hp;
         inFile >> score;
         inFile >> x;

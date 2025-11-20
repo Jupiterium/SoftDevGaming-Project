@@ -6,7 +6,7 @@ using namespace std;
 // This has to do two jobs:
 // 1. Call its parent (Enemy) constructor
 // 2. Set its own wrappedEnemy member
-EnemyDecorator::EnemyDecorator(Enemy* enemy) : Enemy(enemy->getName(), enemy->getHealth(), enemy->getAttack(), enemy->getX(), enemy->getY()), wrappedEnemy(enemy) {}
+EnemyDecorator::EnemyDecorator(Enemy* enemy) : Enemy(enemy->getName(), enemy->getSymbol(), enemy->getHealth(), enemy->getAttack(), enemy->getX(), enemy->getY()), wrappedEnemy(enemy) {}
 
 // Implementation for the overridden methods
 // These pass the call to the wrapped enemy

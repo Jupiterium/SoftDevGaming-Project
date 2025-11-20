@@ -13,7 +13,7 @@ class Enemy : public Entity
 {
 public:
 	// Constructor passes data to Entity
-	Enemy(string n, int h, int a, int x, int y);
+	Enemy(string n, char c, int h, int a, int x, int y);
 	virtual void Attack(Entity* target);
 	virtual void DisplayStatus() const;
 

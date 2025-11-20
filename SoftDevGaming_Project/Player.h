@@ -17,7 +17,7 @@ private:
 	int score;
 
 public:
-	Player(string n, int x, int y);
+	Player(string n, char c, int health, int x, int y);
 
 	// Overridden pure virtual methods
 	void Attack(Entity* target) override;
@@ -25,6 +25,7 @@ public:
 
 	// Getter
 	int getScore() const;
+	vector<Item>& getInventory();
 
 	// Player-specific methods
 	void move(char direction);

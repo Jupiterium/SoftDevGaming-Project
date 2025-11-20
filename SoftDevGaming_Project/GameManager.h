@@ -15,6 +15,7 @@ private:
 
 	// We store enemies here to manage them
 	std::vector<Enemy*> enemies;
+	std::vector<Item*> itemList;
 
 	// Helper methods
 	void HandleInput();
@@ -36,4 +37,14 @@ public:
 
 	// Move to next level
 	void NextLevel();
+
+	void SetCursorPosition(int x, int y);
+	void HideCursor();
+
+	template<typename T>
+	void ClearPtrVector(vector<T*>& v);
+
+	template<typename T>
+	void DrawEntities(const vector<T*>& list, Map& m);
+
 };
