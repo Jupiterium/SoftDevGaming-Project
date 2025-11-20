@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Entity.h"
+#include "Constants.h"
 using namespace std;
 
 // Implementation of Entity's constructor 
@@ -28,8 +29,6 @@ void Entity::setAttack(int a) { (this->attack) += a; }
 
 bool Entity::isAlive() const
 {
-	//if (health <= 0) { return false; }
-	//else { true; }
 	return health > 0;
 }
 

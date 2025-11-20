@@ -47,4 +47,6 @@ public:
 	template<typename T>
 	void DrawEntities(const vector<T*>& list, Map& m);
 
+	bool AreEnemiesRemaining() const;
+
 };

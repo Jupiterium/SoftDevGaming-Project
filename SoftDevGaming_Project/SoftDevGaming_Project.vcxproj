@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="CombatController.h" />
     <ClInclude Include="ConcreteEnemy.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="CounterAttackEnemy.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyDecorator.h" />

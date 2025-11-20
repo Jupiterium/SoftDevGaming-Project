@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Entity.h"
+#include "Constants.h"
 using namespace std;
 
 /*

@@ -11,17 +11,20 @@ void CounterAttackEnemy::takeDamage(int d)
 	this->health = wrappedEnemy->getHealth();
 
 	// Counter-attack Logic
-	if (wrappedEnemy->isAlive()) // If enemy is alive
+	if (!wrappedEnemy->isAlive()) // If enemy is dead
 	{
-		int chance = rand() % 100;
-		if (chance < 40) { // 40% chance
-			cout << ">>> " << wrappedEnemy->getName() << " counterattacks in rage!" << endl;
-
-			// TODO: Fix takeDamage by making it accept a pointer (Entity* attacker)
-		}
+		cout << wrappedEnemy->getName() << " has been defeated." << endl;
 	}
-	// If enemy is dead
-	else { cout << wrappedEnemy->getName() << " has been defeated." << endl; }
 }
 
-void CounterAttackEnemy::Attack(Entity* target) { wrappedEnemy->Attack(target); }
+void CounterAttackEnemy::Attack(Entity* target) {
+	int chance = rand() % 100;
+	if (chance < 60) { // 50% chance
+		cout << ">>> " << wrappedEnemy->getName() << " counterattacks in rage!" << endl;
+		target->takeDamage(attack);
+		// TODO: Fix takeDamage by making it accept a pointer (Entity* attacker)
+	}
+	else {
+		wrappedEnemy->Attack(target);
+	}
+}

@@ -137,5 +137,8 @@
     <ClInclude Include="Item.h">
       <Filter>Header Files\Item</Filter>
     </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

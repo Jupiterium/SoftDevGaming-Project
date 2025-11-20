@@ -2,6 +2,7 @@
 #include "CombatController.h"
 #include "GameData.h"
 #include "Item.h"
+#include "Constants.h"
 #include <iostream>
 #include <conio.h> // For _getch()
 #include <windows.h>
@@ -21,7 +22,7 @@ void GameManager::DrawEntities(const vector<T*>& list, Map& m) {
 
 
 // Constructor initializes Player at (1,1) and Map at (15, 10)
-GameManager::GameManager() : player("Labubu", 'P', 100,  1, 1), currentMap(15, 10), currentLevel(1), isRunning(true) {}
+GameManager::GameManager() : player("Labubu", 'P', 100,  1, 1), currentMap(MAP_WIDTH, MAP_HEIGHT), currentLevel(1), isRunning(true) {}
 
 // Destructor to clean up memory
 GameManager::~GameManager() 
@@ -186,23 +187,35 @@ void GameManager::HandleInput()
 
         if (currentMap.isWalkable(nextX, nextY))
         {
-            // Check for treasure before moving
             char nextTileChar = currentMap.getTile(nextX, nextY).getChar();
 
-            if (nextTileChar == 'T')
-            {
-                player.addScore(100); // +100 points for treasure
-                cout << "Treasure collected! Score +100" << endl;
+            bool canMove = true;
+
+            if (nextTileChar == 'T') {
+                if (!AreEnemiesRemaining()) {
+                    player.addScore(100); // +100 points for treasure
+                    cout << "Treasure collected! Score +100" << endl;
+
+                    // Remove the treasure visually
+                    currentMap.ReplaceTile('.', nextX, nextY);
+                }
+                else {
+                    cout << "The treasure is locked! Defeat all enemies first." << endl;
+                    canMove = false; // Prevent player from moving onto the locked treasure
+                }
             }
 
-            // Visual Update Logic (Clear old)
-            ClearEntityPos(oldX, oldY);
+            if (canMove)
+            {
+                // Visual Update Logic (Clear old)
+                ClearEntityPos(oldX, oldY);
 
-            // Update Player Data
-            player.move(key);
+                // Update Player Data
+                player.setPosition(nextX, nextY);
 
-            // Place the Player at new position
-            DrawEntityPos('P', player.getX(), player.getY());
+                // Place the Player at new position
+                DrawEntityPos('P', player.getX(), player.getY());
+            }
         }
     }
 }
@@ -247,4 +260,11 @@ void GameManager::HideCursor() {
     GetConsoleCursorInfo(hOut, &cursorInfo);
     cursorInfo.bVisible = false;
     SetConsoleCursorInfo(hOut, &cursorInfo);
+}
+
+bool GameManager::AreEnemiesRemaining() const {
+    for (auto e : enemies) {
+        if (e->isAlive()) return true;
+    }
+    return false;
 }

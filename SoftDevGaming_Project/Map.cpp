@@ -2,15 +2,6 @@
 #include "Item.h"
 #include <iostream>
 
-// ANSI color codes
-#define RESET   "\033[0m"
-#define GREEN   "\033[32m"
-#define BLUE    "\033[34m"
-#define BROWN   "\033[33m"
-#define GREY    "\033[90m"
-#define CYAN    "\033[36m"
-#define RED     "\033[31m"
-
 Map::Map(int _width, int _height) {
     this->width = _width;
     this->height = _height;
@@ -19,6 +10,10 @@ Map::Map(int _width, int _height) {
 
     GenerateHiddenGrid(); // fill the map initially
 }
+
+//Getters
+int Map::getWidth() { return this->width; }
+int Map::getHeight() { return this->height; }
 
 bool Map::isWalkable(int x, int y) {
     return (x >= 0 && x < width && y >= 0 && y < height);

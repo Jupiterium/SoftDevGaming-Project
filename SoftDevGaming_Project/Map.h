@@ -4,6 +4,8 @@
 #include <string>
 #include "Tile.h"
 #include "Item.h"
+#include "Constants.h"
+
 using namespace std;
 
 /* 
@@ -33,4 +35,8 @@ public:
 
 	// Getter for the tile
 	Tile& getTile(int x, int y);
+
+	//Getters for map
+	int getWidth();
+	int getHeight();
 };

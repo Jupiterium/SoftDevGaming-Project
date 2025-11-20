@@ -1,6 +1,7 @@
 #pragma once
 
 #include "EnemyDecorator.h"
+#include "Map.h"
 
 /*
 * Purpose of this Class:
@@ -12,7 +13,10 @@ class FleeEnemy : public EnemyDecorator {
 public:
     // Inherits the constructor
     FleeEnemy(Enemy* enemy) : EnemyDecorator(enemy) {}
-    void Flee(int mapWidth, int mapHeight);
+    void Flee();
     ~FleeEnemy() override {}
+    void takeDamage(int d) override;
+
+    //void Attack(Entity* target) override;
 };
 
