@@ -42,16 +42,19 @@ void GameManager::InitGame()
     //Add Items
     //Sword
     ClearPtrVector(itemList);
+    ClearPtrVector(keyList);
+
 
     itemList = Item::createItemList();
+    keyList = Item::createKeyList();     // Keys
 
-    // Draw Enemies
+    // Draw
     DrawEntities(itemList, currentMap);
+    DrawEntities(keyList, currentMap);
 
 
     // Draw Features using helper
-    DrawEntityPos('X', 13, 8); // Exit
-    DrawEntityPos('T', 8, 5);  // Treasure
+    //DrawEntityPos('K', 8, 5);  // Key Item
     
 
     // Create Enemies
@@ -65,9 +68,6 @@ void GameManager::InitGame()
     // Draw Player
     DrawEntityPos(player.getSymbol(), player.getX(), player.getY());
 
-    cout << "Welcome to the Forest Survival Adventure!" << endl;
-    cout << "Press any key to start..." << endl;
-    _getch();
     system("cls");
 
 }
@@ -89,11 +89,12 @@ void GameManager::MainLoop()
 
 void GameManager::UpdateGameState()
 {
-   /* system("cls");*/ // Clear console
+   // Clear console
     SetCursorPosition(0, 0);
 
+    
     // 1. Print the Map
-    // The map already contains the P, E, X, T chars because we updated them in HandleInput/Init
+    // The map already contains the P, E, X, K chars because we updated them in HandleInput/Init
     cout << currentMap;
 
     // 2. Draw HUD
@@ -143,7 +144,7 @@ void GameManager::UpdateGameState()
             player.addItemToInv(*itemList[i]);
             delete itemList[i];
             itemList.erase(itemList.begin() + i);
-
+            
             break;
         }
     }
@@ -151,11 +152,16 @@ void GameManager::UpdateGameState()
     // 5. Check Win Condition (Reaching 'X')
     // We check the tile *under* the player. 
     // Note: Since we replaced the tile with 'P', we might need to check logic differently.
-    // A simple way is checking coordinates against known Exit coordinates.
-    if (player.getX() == 13 && player.getY() == 8)
-    {
-        NextLevel();
-
+    // A simple way is checking coordinates against known Treasure coordinates.
+    // Only allow player to win if treasure is visible/unlocked
+    if (AreAllKeysCollected()) {
+        
+        if (player.getX() == 13 && player.getY() == 8)
+        {
+            player.addScore(100);
+            NextLevel();
+        }
+        
     }
 
     
@@ -187,23 +193,39 @@ void GameManager::HandleInput()
 
         if (currentMap.isWalkable(nextX, nextY))
         {
-            char nextTileChar = currentMap.getTile(nextX, nextY).getChar();
-
             bool canMove = true;
 
-            if (nextTileChar == 'T') {
-                if (!AreEnemiesRemaining()) {
-                    player.addScore(100); // +100 points for treasure
-                    cout << "Treasure collected! Score +100" << endl;
+            ////using different logic to check all the keys in the scene
+            for (int i = 0; i < keyList.size(); ++i)
+            {
+                if (nextX == keyList[i]->getX() && nextY == keyList[i]->getY()) {
+                    if (!AreEnemiesRemaining()) {
 
-                    // Remove the treasure visually
-                    currentMap.ReplaceTile('.', nextX, nextY);
-                }
-                else {
-                    cout << "The treasure is locked! Defeat all enemies first." << endl;
-                    canMove = false; // Prevent player from moving onto the locked treasure
+                        player.addScore(50); // +100 points for key item
+                        player.addItemToInv(Item("Key", "Unlock", 'K', 0, player.getX(), player.getY()));
+                        cout << "Key collected! Score +50." << endl;
+
+                        // Remove the key item visually
+                        currentMap.ReplaceTile('.', nextX, nextY);
+                        
+                        delete keyList[i];
+                        keyList.erase(keyList.begin() + i);
+                        // Check if this was the last key to reveal treasure
+                        if (AreAllKeysCollected()) {
+                            DrawEntityPos('X', 13, 8); // now exit is visible
+                            cout << "Treasure appeared!" << endl;
+                        }
+                    }
+                    else {
+                        cout << "The key is locked! Defeat all enemies first." << endl;
+                        canMove = false; // Prevent player from moving onto the locked treasure
+                        //Sleep(1000);  // wait 1 second
+                        //system("cls");
+                    }
                 }
             }
+
+
 
             if (canMove)
             {
@@ -235,7 +257,9 @@ void GameManager::DrawEntityPos(char symbol, int x, int y)
 
 void GameManager::NextLevel()
 {
+    system("cls");
     currentLevel++;
+    cout << "Treasure unlocked! Score +100." << endl;
     cout << "Level Complete! Moving to Level " << currentLevel << "..." << endl;
     _getch(); // Grab the pressed character 
 
@@ -267,4 +291,8 @@ bool GameManager::AreEnemiesRemaining() const {
         if (e->isAlive()) return true;
     }
     return false;
+}
+
+bool GameManager::AreAllKeysCollected() const {
+    return keyList.empty();    // If no keys remain, they were all collected
 }

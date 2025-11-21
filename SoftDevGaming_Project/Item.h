@@ -32,6 +32,22 @@ public:
     int getY() const;
 
     static vector<Item*> createItemList();
+    //TODO: create a vector list of predefined keys in the scene for each level
+    //Like a ItemFactory similar to EnemyFactory
+    static vector<Item*> createKeyList();
 
     friend std::ostream& operator<< (std::ostream& out, const Item& item);
 };
+
+//Specific type of items
+struct Block {
+    int x, y;
+    char symbol = 'B';
+};
+
+struct Switch {
+    int x, y;
+    char symbol = 'S';
+    bool activated = false;
+};
+

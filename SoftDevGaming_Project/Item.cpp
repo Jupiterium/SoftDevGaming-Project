@@ -34,12 +34,21 @@ int Item::getY() const {
 	return this->y;
 }
 
+//create items for different levels with different pos
 vector<Item*> Item::createItemList() {
 	vector<Item*> itemList;
 	itemList.push_back(new Item("Sword", "weapon", 's', 30, 5, 7));
 	itemList.push_back(new Item("Meat", "potion", 'm', 20, 2, 8));
 
 	return itemList;
+}
+
+//create items for different levels with different pos
+vector<Item*> Item::createKeyList() {
+	vector<Item*> keys;
+	keys.push_back(new Item("Key", "unlock", 'K', 0, 8, 5));
+	keys.push_back(new Item("Key", "unlock", 'K', 0, 2, 4));
+	return keys;
 }
 
 std::ostream& operator<<(std::ostream& out, const Item& item) {

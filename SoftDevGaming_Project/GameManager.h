@@ -16,6 +16,7 @@ private:
 	// We store enemies here to manage them
 	std::vector<Enemy*> enemies;
 	std::vector<Item*> itemList;
+	vector<Item*> keyList;
 
 	// Helper methods
 	void HandleInput();
@@ -48,5 +49,5 @@ public:
 	void DrawEntities(const vector<T*>& list, Map& m);
 
 	bool AreEnemiesRemaining() const;
-
+	bool AreAllKeysCollected() const;
 };

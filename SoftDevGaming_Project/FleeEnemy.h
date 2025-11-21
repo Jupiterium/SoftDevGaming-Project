@@ -16,7 +16,5 @@ public:
     void Flee();
     ~FleeEnemy() override {}
     void takeDamage(int d) override;
-
-    //void Attack(Entity* target) override;
 };
 
