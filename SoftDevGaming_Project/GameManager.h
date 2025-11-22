@@ -4,6 +4,7 @@
 #include "Map.h"
 #include "EnemyFactory.h"
 #include <vector>
+#include <windows.h>
 
 class GameManager
 {
@@ -12,6 +13,9 @@ private:
 	Map currentMap; 
 	int currentLevel;
 	bool isRunning;
+
+	DWORD hudMessageStartTime = 0;
+	bool hudMessageActive = false;
 
 	// We store enemies here to manage them
 	std::vector<Enemy*> enemies;
@@ -50,4 +54,8 @@ public:
 
 	bool AreEnemiesRemaining() const;
 	bool AreAllKeysCollected() const;
+
+	void DrawMap();
+	void ClearHUD();
+	void DrawHUD();
 };

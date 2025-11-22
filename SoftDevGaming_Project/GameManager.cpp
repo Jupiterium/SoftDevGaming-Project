@@ -5,7 +5,6 @@
 #include "Constants.h"
 #include <iostream>
 #include <conio.h> // For _getch()
-#include <windows.h>
 using namespace std;
 
 template<typename T>
@@ -89,17 +88,18 @@ void GameManager::MainLoop()
 
 void GameManager::UpdateGameState()
 {
-   // Clear console
-    SetCursorPosition(0, 0);
+    // 1. Draw map
+    DrawMap();
 
-    
-    // 1. Print the Map
-    // The map already contains the P, E, X, K chars because we updated them in HandleInput/Init
-    cout << currentMap;
-
-    // 2. Draw HUD
-    player.DisplayStatus();
-    cout << "Pos: (" << player.getX() << "," << player.getY() << ")" << endl;
+    //2. Draw HUD
+    if (hudMessageActive) {
+        DWORD now = GetTickCount64();
+        if (now - hudMessageStartTime >= 2000) { // 2000ms = 2 second
+            ClearHUD();
+            hudMessageActive = false;
+        }
+    }
+    DrawHUD();
 
     // 3. Check Enemy Logic (Collision & Combat)
     for (int i = 0; i < enemies.size(); ++i)
@@ -219,8 +219,8 @@ void GameManager::HandleInput()
                     else {
                         cout << "The key is locked! Defeat all enemies first." << endl;
                         canMove = false; // Prevent player from moving onto the locked treasure
-                        //Sleep(1000);  // wait 1 second
-                        //system("cls");
+                        hudMessageStartTime = GetTickCount64(); // record time now
+                        hudMessageActive = true;
                     }
                 }
             }
@@ -295,4 +295,29 @@ bool GameManager::AreEnemiesRemaining() const {
 
 bool GameManager::AreAllKeysCollected() const {
     return keyList.empty();    // If no keys remain, they were all collected
+}
+
+
+// Draws map at top-left (0,0)
+void GameManager::DrawMap() {
+    SetCursorPosition(0, 0);
+    cout << currentMap;
+}
+
+void GameManager::ClearHUD() {
+    int hudStartY = currentMap.getHeight() + 2; // row where HUD begins
+    int hudWidth = 100; // width wide enough for all HUD lines
+    for (int i = 0; i < 6; i++) { // assuming 4 lines of HUD
+        SetCursorPosition(0, hudStartY + i);
+        cout << string(hudWidth, ' '); // overwrite with spaces
+    }
+}
+
+void GameManager::DrawHUD() {
+    int hudStartY = currentMap.getHeight()+ 2;
+    SetCursorPosition(0, hudStartY);
+    cout << "HP: " << player.getHealth() << "  Score: " << player.getScore() << endl;
+    cout << "Pos: (" << player.getX() << "," << player.getY() << ")" << endl;
+    cout << "Enemies remaining: " << enemies.size() << endl;
+    cout << "Keys remaining: " << keyList.size() << endl;
 }
