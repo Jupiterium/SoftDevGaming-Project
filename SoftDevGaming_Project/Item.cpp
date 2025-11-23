@@ -35,19 +35,43 @@ int Item::getY() const {
 }
 
 //create items for different levels with different pos
-vector<Item*> Item::createItemList() {
+vector<Item*> Item::createItemList(int level) {
 	vector<Item*> itemList;
-	itemList.push_back(new Item("Sword", "weapon", 's', 30, 5, 7));
-	itemList.push_back(new Item("Meat", "potion", 'm', 20, 2, 8));
+
+	if (level == 1) {
+		itemList.push_back(new Item("Sword", "weapon", 's', 45, 5, 7));
+		itemList.push_back(new Item("Meat", "potion", 'm', 30, 2, 8));
+	}
+	else if (level == 2) {
+		itemList.push_back(new Item("Dagger", "weapon", 'd', 40, 6, 7));
+		itemList.push_back(new Item("Meat", "potion", 'm', 30, 1, 8));
+		itemList.push_back(new Item("Bread", "potion", 'b', 25, 3, 7));
+	}
+	else if (level >= 3) {
+		itemList.push_back(new Item("Magic water", "potion", 'w', 65, 4, 7));
+	}
 
 	return itemList;
 }
 
 //create items for different levels with different pos
-vector<Item*> Item::createKeyList() {
+vector<Item*> Item::createKeyList(int level) {
 	vector<Item*> keys;
-	keys.push_back(new Item("Key", "unlock", 'K', 0, 8, 5));
-	keys.push_back(new Item("Key", "unlock", 'K', 0, 2, 4));
+	if (level == 1)
+	{
+		keys.push_back(new Item("Key", "unlock", 'K', 0, 8, 5));
+	}
+	else if (level == 2)
+	{
+		keys.push_back(new Item("Key", "unlock", 'K', 0, 2, 5));
+		keys.push_back(new Item("Key", "unlock", 'K', 0, 1, 4));
+	}
+	else if (level >= 3) {
+		keys.push_back(new Item("Key", "unlock", 'K', 0, 10, 5));
+		keys.push_back(new Item("Key", "unlock", 'K', 0, 9, 4));
+		keys.push_back(new Item("Key", "unlock", 'K', 0, 7, 7));
+	}
+
 	return keys;
 }
 

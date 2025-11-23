@@ -31,10 +31,10 @@ public:
     int getX() const;
     int getY() const;
 
-    static vector<Item*> createItemList();
+    static vector<Item*> createItemList(int level);
     //TODO: create a vector list of predefined keys in the scene for each level
     //Like a ItemFactory similar to EnemyFactory
-    static vector<Item*> createKeyList();
+    static vector<Item*> createKeyList(int level);
 
     friend std::ostream& operator<< (std::ostream& out, const Item& item);
 };

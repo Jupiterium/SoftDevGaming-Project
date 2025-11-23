@@ -1,4 +1,5 @@
 #include "GameManager.h"
+#include "Constants.h"
 #include <iostream>
 #include <conio.h> // For _getch()
 
@@ -9,7 +10,15 @@ int main()
     GameManager game;
     std::cout << "Welcome to the Forest Survival Adventure!" << endl;
     std::cout << "Find the treasure X in the forest." << endl;
-    std::cout << "Press any key to start..." << endl;
+
+    std::cout << "\nLegends: " << endl;
+    std::cout << CYAN << "P = Player" << RESET << endl;
+    std::cout << RED << "X = Treasure" << RESET << endl;
+    std::cout << GREEN << "K = Key" << RESET << endl;
+    std::cout << BROWN << "E = Enemy" << RESET << endl;
+    std::cout << BLUE << "Others = Collectables" << RESET << endl;
+
+    std::cout << "\nPress any key to start..." << endl;
     _getch();
     system("cls");
 

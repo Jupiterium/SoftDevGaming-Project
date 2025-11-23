@@ -21,7 +21,7 @@ void GameManager::DrawEntities(const vector<T*>& list, Map& m) {
 
 
 // Constructor initializes Player at (1,1) and Map at (15, 10)
-GameManager::GameManager() : player("Labubu", 'P', 100,  1, 1), currentMap(MAP_WIDTH, MAP_HEIGHT), currentLevel(1), isRunning(true) {}
+GameManager::GameManager() : player("Labubu", 'P', 100,  0, 0), currentMap(MAP_WIDTH, MAP_HEIGHT), currentLevel(1), isRunning(true) {}
 
 // Destructor to clean up memory
 GameManager::~GameManager() 
@@ -33,8 +33,13 @@ GameManager::~GameManager()
 
 void GameManager::InitGame()
 {
+
     system("cls");
     HideCursor();
+
+    GameData::GetInstance()->LoadGame(player, loadedLevel);
+    currentLevel = loadedLevel;
+
     // Initialize Map visual features for Level 1
     currentMap.GenerateHiddenGrid(); // Reset to dots
 
@@ -44,8 +49,8 @@ void GameManager::InitGame()
     ClearPtrVector(keyList);
 
 
-    itemList = Item::createItemList();
-    keyList = Item::createKeyList();     // Keys
+    itemList = Item::createItemList(currentLevel);
+    keyList = Item::createKeyList(currentLevel);     // Keys
 
     // Draw
     DrawEntities(itemList, currentMap);
@@ -92,13 +97,10 @@ void GameManager::UpdateGameState()
     DrawMap();
 
     //2. Draw HUD
-    if (hudMessageActive) {
-        DWORD now = GetTickCount64();
-        if (now - hudMessageStartTime >= 2000) { // 2000ms = 2 second
-            ClearHUD();
-            hudMessageActive = false;
-        }
-    }
+
+    /*Every time game updated, 
+    this will call the timer to clear any unnecessary messages with timer*/
+    CallTimer(1500);
     DrawHUD();
 
     // 3. Check Enemy Logic (Collision & Combat)
@@ -144,7 +146,8 @@ void GameManager::UpdateGameState()
             player.addItemToInv(*itemList[i]);
             delete itemList[i];
             itemList.erase(itemList.begin() + i);
-            
+            hudMessageStartTime = GetTickCount64(); // record time now
+            hudMessageActive = true;
             break;
         }
     }
@@ -183,12 +186,20 @@ void GameManager::HandleInput()
 
         switch (key)
         {
-        case 'w': nextY--; break;
-        case 's': nextY++; break;
-        case 'a': nextX--; break;
-        case 'd': nextX++; break;
-        case 'q': isRunning = false; return;
-        case 'k': GameData::GetInstance()->SaveGame(player); return;
+            case 'w': nextY--; break;
+            case 's': nextY++; break;
+            case 'a': nextX--; break;
+            case 'd': nextX++; break;
+            case 'q': isRunning = false; return;
+            case 'k':
+            {
+                ClearHUD();              
+                GameData::GetInstance()->SaveGame(player, currentLevel); 
+                hudMessage = "Game Saved";
+                hudMessageStartTime = GetTickCount64(); // record time now
+                hudMessageActive = true;
+                return;
+            }
         }
 
         if (currentMap.isWalkable(nextX, nextY))
@@ -259,6 +270,7 @@ void GameManager::NextLevel()
 {
     system("cls");
     currentLevel++;
+    loadedLevel = currentLevel;
     cout << "Treasure unlocked! Score +100." << endl;
     cout << "Level Complete! Moving to Level " << currentLevel << "..." << endl;
     _getch(); // Grab the pressed character 
@@ -307,7 +319,7 @@ void GameManager::DrawMap() {
 void GameManager::ClearHUD() {
     int hudStartY = currentMap.getHeight() + 2; // row where HUD begins
     int hudWidth = 100; // width wide enough for all HUD lines
-    for (int i = 0; i < 6; i++) { // assuming 4 lines of HUD
+    for (int i = 0; i < 10; i++) { // assuming 10 lines of HUD
         SetCursorPosition(0, hudStartY + i);
         cout << string(hudWidth, ' '); // overwrite with spaces
     }
@@ -316,8 +328,21 @@ void GameManager::ClearHUD() {
 void GameManager::DrawHUD() {
     int hudStartY = currentMap.getHeight()+ 2;
     SetCursorPosition(0, hudStartY);
-    cout << "HP: " << player.getHealth() << "  Score: " << player.getScore() << endl;
+    cout << CYAN << hudMessage << RESET << endl;
+    cout << "\nHP: " << player.getHealth() << "  Score: " << player.getScore() << endl;
     cout << "Pos: (" << player.getX() << "," << player.getY() << ")" << endl;
     cout << "Enemies remaining: " << enemies.size() << endl;
     cout << "Keys remaining: " << keyList.size() << endl;
+    
+}
+
+void GameManager::CallTimer(int time) {
+    if (hudMessageActive) {
+        ULONGLONG now = GetTickCount64();
+        if (now - hudMessageStartTime >= time) { // 2000ms = 2 second
+            ClearHUD();
+            hudMessageActive = false;
+            hudMessage.clear();
+        }
+    }
 }

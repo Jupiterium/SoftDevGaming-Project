@@ -21,6 +21,17 @@ void Player::DisplayStatus() const
 	cout << "> Player: " << this->name << " | HP: " << this->health << " | ATK: " << this->attack << " | Score: " << this->score << endl;
 }
 
+void Player::takeDamage(int d) {
+    if (isDefending)
+    {
+        cout << name << " blocked the attack!" << endl;
+        isDefending = false;  // defend only lasts for one attack
+        return;
+    }
+
+    Entity::takeDamage(d);
+}
+
 // Getter
 int Player::getScore() const { return score; }
 vector<Item>& Player::getInventory() { return inventory; }
@@ -43,6 +54,7 @@ void Player::move(char direction)
 void Player::defend()
 {
 	cout << this->name << " is defending!" << endl;
+    isDefending = true;
 }
 
 void Player::addItemToInv(const Item& item)

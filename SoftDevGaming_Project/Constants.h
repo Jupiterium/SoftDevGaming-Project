@@ -10,4 +10,3 @@
 #define GREY    "\033[90m"
 #define CYAN    "\033[36m"
 #define RED     "\033[31m"
-#define RED     "\033[31m"

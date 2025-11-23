@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Map.h"
 #include "EnemyFactory.h"
+#include "GameData.h"
 #include <vector>
 #include <windows.h>
 
@@ -13,9 +14,11 @@ private:
 	Map currentMap; 
 	int currentLevel;
 	bool isRunning;
+	int loadedLevel = 1;
 
-	DWORD hudMessageStartTime = 0;
+	ULONGLONG hudMessageStartTime = 0;
 	bool hudMessageActive = false;
+	string hudMessage = "";
 
 	// We store enemies here to manage them
 	std::vector<Enemy*> enemies;
@@ -58,4 +61,6 @@ public:
 	void DrawMap();
 	void ClearHUD();
 	void DrawHUD();
+	//void SetTimer();
+	void CallTimer(int time);
 };

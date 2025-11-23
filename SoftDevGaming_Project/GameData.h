@@ -23,6 +23,6 @@ public:
     static GameData* GetInstance(); 
 
     // File I/O methods
-    void SaveGame(const Player& player);
-    void LoadGame(Player& player);
+    void SaveGame(Player& player, int currentLevel);
+    void LoadGame(Player& player, int& currentLevel);
 };

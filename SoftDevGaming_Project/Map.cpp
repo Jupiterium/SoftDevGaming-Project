@@ -55,8 +55,8 @@ ostream& operator<<(ostream& out, const Map& map) {
             case '.': out << GREY << symbol << RESET; break; // hidden area (green)
             case 'P': out << CYAN << symbol << RESET; break; // player
             case 'X': out << RED << symbol << RESET; break; // Treasure
-            case 'K': out << BROWN << symbol << RESET; break; // Key
-            case 'E': out << RED << symbol << RESET; break; // enemy (red)
+            case 'K': out << GREEN << symbol << RESET; break; // Key
+            case 'E': out << BROWN << symbol << RESET; break; // enemy (red)
             default:  out << BLUE << symbol << RESET; break;
             }
         }

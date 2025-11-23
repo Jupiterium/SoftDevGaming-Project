@@ -1,7 +1,11 @@
 #include "GameData.h"
+#include "Player.h"
 #include <fstream> // For file I/O
 #include <string>
 using namespace std;
+
+//Code commented in this file works just not included due to cheat loop in the game, 
+//Else need to implement saving state
 
 // Initialize static member
 GameData* GameData::instance = nullptr;
@@ -17,55 +21,85 @@ GameData* GameData::GetInstance()
     return instance;
 }
 
-void GameData::SaveGame(const Player& player)
+void GameData::SaveGame(Player& player, int currentLevel)
 {
     ofstream outFile("savegame.txt");
-    if (outFile.is_open())
+    if (!outFile.is_open())
     {
-        // Save order: Name, Health, Attack, Score, X, Y
-        outFile << player.getName() << endl;
-        outFile << player.getSymbol() << endl;
-        outFile << player.getHealth() << endl;
-        outFile << player.getScore() << endl; // Assuming Score stores progress
-        outFile << player.getX() << endl;
-        outFile << player.getY() << endl;
+        cout << "\nError: Unable to save game." << endl;
+        return;
+    }
 
-        cout << "Game Saved Successfully!" << endl;
-        outFile.close();
-    }
-    else
-    {
-        cout << "Error: Unable to save game." << endl;
-    }
+    // Basic info
+    outFile << player.getName() << endl;
+    outFile << player.getSymbol() << endl;
+    outFile << player.getHealth() << endl;
+    outFile << player.getAttack() << endl;
+    outFile << player.getScore() << endl;
+    outFile << player.getX() << endl;
+    outFile << player.getY() << endl;
+
+    // Level
+    outFile << currentLevel << endl;
+
+    // Inventory
+    //vector<Item> inv = player.getInventory();
+    //outFile << inv.size() << endl;  // how many items
+
+    //for (auto& item : inv)
+    //{
+    //    outFile << item.getName() << endl;
+    //    outFile << item.getType() << endl;
+    //    outFile << item.getBoostAmount() << endl;
+    //} 
 }
 
-void GameData::LoadGame(Player& player)
+void GameData::LoadGame(Player& player, int& currentLevel)
 {
     ifstream inFile("savegame.txt");
-    if (inFile.is_open())
+    if (!inFile.is_open())
     {
-        string name;
-        char c;
-        int hp, score, x, y;
-
-        // Read in the same order we saved
-        getline(inFile, name);
-        inFile >> c;
-        inFile >> hp;
-        inFile >> score;
-        inFile >> x;
-        inFile >> y;
-
-        // Use setters to update player
-        // Note: might need to add setScore or setX/Y to Player if missing
-        player.setHealth(hp);
-        //player.setScore(score); 
-        //player.setPosition(x, y); 
-        cout << "Game Loaded Successfully!" << endl;
-        inFile.close();
+        cout << "\nNo save file found." << endl;
+        return;
     }
-    else
+
+    string name;
+    char symbol;
+    int hp, atk, score, x, y;
+
+    getline(inFile, name);
+    inFile >> symbol;
+    inFile >> hp;
+    inFile >> atk;
+    inFile >> score;
+    inFile >> x;
+    inFile >> y;
+
+    inFile >> currentLevel;
+
+    int invCount;
+    inFile >> invCount;
+    inFile.ignore(); // flush newline
+
+    /*vector<Item> loadedInv;
+    for (int i = 0; i < invCount; i++)
     {
-        cout << "No save file found." << endl;
-    }
+        string itemName, itemType;
+        int boost;
+        getline(inFile, itemName);
+        getline(inFile, itemType);
+        inFile >> boost;
+        inFile.ignore();
+
+        loadedInv.emplace_back(itemName, itemType, boost);
+    }*/
+
+    // Apply to player
+    player.setHealth(hp);
+    player.setAttack(atk);
+    player.setScore(score);
+    player.setPosition(x, y);
+    //player.setInventory(loadedInv);
+
+    cout << "\nGame Loaded Successfully!" << endl;
 }

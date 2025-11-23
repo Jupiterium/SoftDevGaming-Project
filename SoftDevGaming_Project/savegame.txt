@@ -1,0 +1,15 @@
+Labubu
+P
+100
+10
+0
+8
+6
+1
+2
+Sword
+weapon
+45
+Meat
+potion
+30
