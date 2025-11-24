@@ -20,23 +20,39 @@ GameManager::~GameManager()
     ClearPtrVector(keyList);
 }
 
-void GameManager::InitGame()
+void GameManager::InitGame(bool loadFromSave)
 {
     system("cls");
     HideCursor();
 
-    // Try to load the game
-    bool loaded = GameData::GetInstance()->LoadGame(player, loadedLevel, itemList, keyList, enemies);
+    bool loaded = false;
+    int loadedLevel = 0;
 
-    if (loaded)
+    if (loadFromSave)
     {
-        // If load was successful, use the loaded level
+        // Only try to load if we were told to
+        loaded = GameData::GetInstance()->LoadGame(player, loadedLevel, itemList, keyList, enemies);
+    }
+
+    if (loadFromSave && loaded)
+    {
+        // Loaded from file successfully
         currentLevel = loadedLevel;
+        
     }
     else
     {
-        // If load failed (no file), start fresh
-        currentLevel = 1;
+        // Either:
+        // - loadFromSave is false (we are starting a fresh level)
+        // - or loading failed (no save file)
+
+        // If not loading from save, decide what level we are on
+        // When starting a brand new game, you can set currentLevel = 1 before calling this
+        // or do it here if level is unknown.
+        if (!loadFromSave && currentLevel <= 0)
+        {
+            currentLevel = 1;
+        }
 
         ClearPtrVector(itemList);
         ClearPtrVector(keyList);
@@ -45,6 +61,7 @@ void GameManager::InitGame()
         itemList = Item::createItemList(currentLevel);
         keyList = Item::createKeyList(currentLevel);
         enemies = EnemyFactory::CreateEnemiesForLevel(currentLevel);
+      
     }
 
     // Initialize Map visual features
@@ -59,6 +76,11 @@ void GameManager::InitGame()
 
     // Draw Player
     DrawEntityPos(player.getSymbol(), player.getX(), player.getY());
+
+    if (AreAllKeysCollected())
+    {
+        DrawEntityPos('X', 13, 8);
+    }
 
     system("cls");
 }
@@ -127,7 +149,6 @@ void GameManager::UpdateGameState()
             delete itemList[i];
             itemList.erase(itemList.begin() + i);
 
-            hudMessage = "Item Collected!";
             hudMessageStartTime = GetTickCount64();
             hudMessageActive = true;
             break;
@@ -193,6 +214,7 @@ void GameManager::HandleInput()
                         hudMessageActive = true;
 
                         if (AreAllKeysCollected()) {
+							//Treasure appears
                             DrawEntityPos('X', 13, 8);
                         }
                     }
@@ -230,11 +252,13 @@ void GameManager::NextLevel()
     system("cls");
     currentLevel++;
     loadedLevel = currentLevel;
+    cout << "Treasure collected. Score +100" << endl;
+
     cout << "Level Complete! Moving to Level " << currentLevel << "..." << endl;
     _getch();
 
     player.setPosition(1, 1);
-    InitGame();
+    InitGame(false);
 }
 
 void GameManager::SetCursorPosition(int x, int y) {

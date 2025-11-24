@@ -18,13 +18,16 @@ int main()
     std::cout << BROWN << "E = Enemy" << RESET << endl;
     std::cout << BLUE << "Others = Collectables" << RESET << endl;
 
+    std::cout << "\nPress K to save game. " << endl;
+    std::cout << "-------------------------" << endl;
+
     std::cout << "\nPress any key to start..." << endl;
     _getch();
     system("cls");
 
     // Initialize the Game
     // This sets up the grid, places the exit/treasure, and spawns enemies
-    game.InitGame();
+    game.InitGame(true);
 
     // Start the Main Loop
     // This runs the game (Input -> Update -> Draw) until the player wins or dies

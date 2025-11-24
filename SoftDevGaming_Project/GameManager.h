@@ -20,7 +20,7 @@ private:
 	bool hudMessageActive = false;
 	string hudMessage = "";
 
-	// We store enemies here to manage them
+	// We store things here to manage them
 	std::vector<Enemy*> enemies;
 	std::vector<Item*> itemList;
 	vector<Item*> keyList;
@@ -38,7 +38,7 @@ public:
 	~GameManager(); // Destructor to clean up enemies
 
 	// Initialize the game (grid, places, enemies)
-	void InitGame();
+	void InitGame(bool loadFromSave = false);
 
 	// Main Loop of the game (input -> update -> draw)
 	void MainLoop();

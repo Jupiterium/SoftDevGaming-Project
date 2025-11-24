@@ -177,6 +177,7 @@ bool GameData::LoadGame(Player& player, int& currentLevel, vector<Item*>& worldI
         enemies.push_back(newEnemy);
     }
 
+
     inFile.close();
     return true;
 }
