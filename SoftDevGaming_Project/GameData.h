@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "Player.h"
+#include "Enemy.h"
 
 /*
 * Purpose of this Class:
@@ -23,6 +24,6 @@ public:
     static GameData* GetInstance(); 
 
     // File I/O methods
-    void SaveGame(Player& player, int currentLevel);
-    void LoadGame(Player& player, int& currentLevel);
+    void SaveGame(Player& player, int currentLevel, const vector<Item*>& worldItems, const vector<Item*>& worldKeys, const vector<Enemy*>& enemies);
+    bool LoadGame(Player& player, int& currentLevel, vector<Item*>& worldItems, vector<Item*>& worldKeys, vector<Enemy*>& enemies);
 };

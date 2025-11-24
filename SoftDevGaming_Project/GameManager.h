@@ -11,7 +11,7 @@ class GameManager
 {
 private:
 	Player player;
-	Map currentMap; 
+	Map currentMap;
 	int currentLevel;
 	bool isRunning;
 	int loadedLevel = 1;
@@ -49,12 +49,6 @@ public:
 	void SetCursorPosition(int x, int y);
 	void HideCursor();
 
-	template<typename T>
-	void ClearPtrVector(vector<T*>& v);
-
-	template<typename T>
-	void DrawEntities(const vector<T*>& list, Map& m);
-
 	bool AreEnemiesRemaining() const;
 	bool AreAllKeysCollected() const;
 
@@ -63,4 +57,19 @@ public:
 	void DrawHUD();
 	//void SetTimer();
 	void CallTimer(int time);
+
+	// Templates are to be defined in the header
+	template<typename T>
+	void ClearPtrVector(vector<T*>& v)
+	{
+		for (auto p : v) delete p;
+		v.clear();
+	}
+
+	template<typename T>
+	void DrawEntities(const vector<T*>& list, Map& m)
+	{
+		for (auto e : list)
+			m.ReplaceTile(e->getSymbol(), e->getX(), e->getY());
+	}
 };
