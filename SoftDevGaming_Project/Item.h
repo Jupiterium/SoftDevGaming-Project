@@ -39,15 +39,3 @@ public:
     friend std::ostream& operator<< (std::ostream& out, const Item& item);
 };
 
-//Specific type of items
-struct Block {
-    int x, y;
-    char symbol = 'B';
-};
-
-struct Switch {
-    int x, y;
-    char symbol = 'S';
-    bool activated = false;
-};
-

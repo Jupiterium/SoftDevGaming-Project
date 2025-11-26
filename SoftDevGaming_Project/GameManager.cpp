@@ -294,7 +294,7 @@ void GameManager::DrawMap() {
 void GameManager::ClearHUD() {
     int hudStartY = currentMap.getHeight() + 2;
     int hudWidth = 100;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 15; i++) {
         SetCursorPosition(0, hudStartY + i);
         cout << string(hudWidth, ' ');
     }
@@ -303,11 +303,14 @@ void GameManager::ClearHUD() {
 void GameManager::DrawHUD() {
     int hudStartY = currentMap.getHeight() + 2;
     SetCursorPosition(0, hudStartY);
-    cout << CYAN << hudMessage << RESET << endl;
+    cout << "Level " << currentLevel << endl;
+    cout << CYAN << "[Press K to save, Q to quit] " << RESET << endl;
+    cout << BLUE << hudMessage << RESET << endl;
     cout << "\nHP: " << player.getHealth() << "  Score: " << player.getScore() << endl;
     cout << "Pos: (" << player.getX() << "," << player.getY() << ")" << endl;
     cout << "Enemies remaining: " << enemies.size() << endl;
     cout << "Keys remaining: " << keyList.size() << endl;
+
 }
 
 void GameManager::CallTimer(int time) {

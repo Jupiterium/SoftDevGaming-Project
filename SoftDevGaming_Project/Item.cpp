@@ -40,15 +40,15 @@ vector<Item*> Item::createItemList(int level) {
 
 	if (level == 1) {
 		itemList.push_back(new Item("Sword", "weapon", 's', 45, 5, 7));
-		itemList.push_back(new Item("Meat", "potion", 'm', 30, 2, 8));
+		itemList.push_back(new Item("Meat", "potion", 'm', 50, 2, 8));
 	}
 	else if (level == 2) {
 		itemList.push_back(new Item("Dagger", "weapon", 'd', 40, 6, 7));
-		itemList.push_back(new Item("Meat", "potion", 'm', 30, 1, 8));
-		itemList.push_back(new Item("Bread", "potion", 'b', 25, 3, 7));
+		itemList.push_back(new Item("Meat", "potion", 'm', 50, 1, 8));
+		itemList.push_back(new Item("Bread", "potion", 'b', 30, 3, 7));
 	}
 	else if (level >= 3) {
-		itemList.push_back(new Item("Magic water", "potion", 'w', 65, 4, 7));
+		itemList.push_back(new Item("Magic water", "potion", 'w', 150, 4, 7));
 	}
 
 	return itemList;
