@@ -24,7 +24,7 @@ int main()
     //Menu for player to choose continue game or not
     std::cout << "\nMenu: " << endl;
     std::cout << "Continue the adventure?" << endl;
-    std::cout << "Y = Continue\tN = New Game\tQ = Quit." << endl;
+    std::cout << "Any Key = Continue\tN = New Game\tQ = Quit." << endl;
 
     char choice = _getch();
     if (choice == 'q' || choice == 'Q')

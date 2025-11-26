@@ -14,7 +14,7 @@ Enemy* EnemyFactory::CreateEnemy(int typeId, int x, int y)
 
     case 2: // Goblin (Fleeing)
         // Note: Decorator takes a pointer to the concrete enemy
-        return new FleeEnemy(new ConcreteEnemy("Goblin", 'E', 35, 30, x, y));
+        return new FleeEnemy(new ConcreteEnemy("Goblin", 'E', 35, 35, x, y));
 
     case 3: // Orc (Counter-Attacking)
         return new CounterAttackEnemy(new ConcreteEnemy("Orc", 'E', 55, 35, x, y));

@@ -29,20 +29,6 @@ private:
 	void HandleInput();
 	void UpdateGameState();
 
-	// Helper to clean up map visuals before moving entities
-	void ClearEntityPos(int x, int y);
-	void DrawEntityPos(char symbol, int x, int y);
-
-public:
-	GameManager();
-	~GameManager(); // Destructor to clean up enemies
-
-	// Initialize the game (grid, places, enemies)
-	void InitGame(bool loadFromSave = false);
-
-	// Main Loop of the game (input -> update -> draw)
-	void MainLoop();
-
 	// Move to next level
 	void NextLevel();
 
@@ -58,6 +44,10 @@ public:
 	//void SetTimer();
 	void CallTimer(int time);
 
+	// Helper to clean up map visuals before moving entities
+	void ClearEntityPos(int x, int y);
+	void DrawEntityPos(char symbol, int x, int y);
+
 	// Templates are to be defined in the header
 	template<typename T>
 	void ClearPtrVector(vector<T*>& v)
@@ -72,4 +62,16 @@ public:
 		for (auto e : list)
 			m.ReplaceTile(e->getSymbol(), e->getX(), e->getY());
 	}
+
+
+public:
+	GameManager();
+	~GameManager(); // Destructor to clean up enemies
+
+	// Initialize the game (grid, places, enemies)
+	void InitGame(bool loadFromSave = false);
+
+	// Main Loop of the game (input -> update -> draw)
+	void MainLoop();
+
 };
