@@ -1,6 +1,10 @@
+// Implementation of Item class and factory methods.
+
 #include "Item.h"
 #include <iostream>
 
+
+// Construct an Item with specified properties.
 Item::Item(std::string name, string type, char symbol, int boost, int x, int y) {
 	this->name = name;
 	this->type = type;
@@ -9,6 +13,8 @@ Item::Item(std::string name, string type, char symbol, int boost, int x, int y) 
 	this->x = x;
 	this->y = y;
 }
+
+// ---- ACCESSOR IMPLEMENTATIONS ----
 
 string Item::getName() const {
 	return this->name;
@@ -34,7 +40,9 @@ int Item::getY() const {
 	return this->y;
 }
 
-//create items for different levels with different pos
+// ----- FACTORY METHOD: Create Item List -----
+
+// Factory method: create level-specific world items.
 vector<Item*> Item::createItemList(int level) {
 	vector<Item*> itemList;
 
@@ -55,9 +63,12 @@ vector<Item*> Item::createItemList(int level) {
 	return itemList;
 }
 
-//create items for different levels with different pos
+// ------ FACTORY METHOD: Create Key List ------
+
+// Factory method: create level-specific keys (unlock items).
 vector<Item*> Item::createKeyList(int level) {
 	vector<Item*> keys;
+	
 	if (level == 1)
 	{
 		keys.push_back(new Item("Key", "unlock", 'K', 0, 8, 5));
@@ -76,6 +87,7 @@ vector<Item*> Item::createKeyList(int level) {
 	return keys;
 }
 
+// Print item by name to output stream.
 std::ostream& operator<<(std::ostream& out, const Item& item) {
 	out << item.getName();
 	return out;

@@ -1,3 +1,5 @@
+// Implementation of save/load functionality using singleton pattern.
+
 #include "GameData.h"
 #include "Player.h"
 #include "EnemyFactory.h"
@@ -5,10 +7,13 @@
 #include <string>
 using namespace std;
 
+// Initialize static singleton instance
 GameData* GameData::instance = nullptr;
 
+// Private constructor (singleton enforcement).
 GameData::GameData() {}
 
+// Get or create the singleton instance.
 GameData* GameData::GetInstance()
 {
     if (instance == nullptr)
@@ -18,9 +23,11 @@ GameData* GameData::GetInstance()
     return instance;
 }
 
+// Save all game state to "savegame.txt"
 void GameData::SaveGame(Player& player, int currentLevel, const vector<Item*>& worldItems, const vector<Item*>& worldKeys, const vector<Enemy*>& enemies)
 {
     ofstream outFile("savegame.txt");
+	//Error-handling for file issues
     if (!outFile.is_open()) {
         cout << "Error: Unable to save game." << endl;
         return;
@@ -81,13 +88,17 @@ void GameData::SaveGame(Player& player, int currentLevel, const vector<Item*>& w
     outFile.close();
 }
 
+//Load game state from "savegame.txt"
 bool GameData::LoadGame(Player& player, int& currentLevel, vector<Item*>& worldItems, vector<Item*>& worldKeys, vector<Enemy*>& enemies)
 {
     ifstream inFile("savegame.txt");
+
+	//Error handling for missing file
     if (!inFile.is_open()) {
-        return false;
+		return false; 
     }
 
+	//Load Player Stats
     string name; char symbol; int hp, atk, score, x, y;
     getline(inFile, name);
     inFile >> symbol >> hp >> atk >> score >> x >> y;

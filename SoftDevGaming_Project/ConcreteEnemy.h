@@ -12,6 +12,7 @@ using namespace std;
 class ConcreteEnemy : public Enemy
 {
 public:
+	// Forward parameters to the Enemy base class (name, char, health, attack, x coordinate, y coordinate)
 	ConcreteEnemy(string n, char c, int h, int a, int x, int y);
 
 	// Concrete implementation of the virtual methods 

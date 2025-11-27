@@ -22,8 +22,9 @@ int Entity::getX() const { return x; }
 
 int Entity::getY() const { return y; }
 
-int Entity::setX(int x) { return this->x; }
-int Entity::setY(int y) { return this->y; }
+// Implementation of Setters
+int Entity::setX(int newX) { return this->x = newX; return this->x; }
+int Entity::setY(int newY) { return this->y = newY; return this->y; }
 void Entity::setAttack(int a) { (this->attack) += a; }
 
 
@@ -33,6 +34,7 @@ bool Entity::isAlive() const
 }
 
 // Virtual method implementation
+// Apply damage to the entity by subtracting from health
 void Entity::takeDamage(int d)
 {
 	health -= d;

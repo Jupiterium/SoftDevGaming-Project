@@ -20,23 +20,29 @@ GameManager::~GameManager()
     ClearPtrVector(keyList);
 }
 
+// Initialize the game (grid, places, enemies).
 void GameManager::InitGame(bool loadFromSave)
 {
+    //Clear the console
     system("cls");
+
+	// Hide cursor for cleaner rendering
     HideCursor();
 
     bool loaded = false;
     int loadedLevel = 0;
 
+	// Attempt to load from save file if requested
     if (loadFromSave)
     {
-        // Only try to load if we were told to
+		//Load game data from file
         loaded = GameData::GetInstance()->LoadGame(player, loadedLevel, itemList, keyList, enemies);
     }
 
+    //If required to load and is loaded successfully 
     if (loadFromSave && loaded)
     {
-        // Loaded from file successfully
+		// Set current level to loaded level
         currentLevel = loadedLevel;
         
     }
@@ -49,6 +55,7 @@ void GameManager::InitGame(bool loadFromSave)
         // If not loading from save, decide what level we are on
         // When starting a brand new game, you can set currentLevel = 1 before calling this
         // or do it here if level is unknown.
+		//Error handling for when loaded level is invalid
         if (!loadFromSave && currentLevel <= 0)
         {
             currentLevel = 1;
@@ -77,6 +84,7 @@ void GameManager::InitGame(bool loadFromSave)
     // Draw Player
     DrawEntityPos(player.getSymbol(), player.getX(), player.getY());
 
+	// If all keys are already collected (loaded game), draw treasure
     if (AreAllKeysCollected())
     {
         DrawEntityPos('X', 13, 8);
@@ -85,12 +93,17 @@ void GameManager::InitGame(bool loadFromSave)
     system("cls");
 }
 
+// Run the main game loop until the player dies or quits.
 void GameManager::MainLoop()
 {
     system("cls");
+	//Check the game is running and player is alive
     while (isRunning && player.isAlive())
     {
+		// Update game state (collisions, combat, items, win conditions)
         UpdateGameState();
+
+		//Check for player input
         HandleInput();
     }
 
@@ -135,7 +148,7 @@ void GameManager::UpdateGameState()
             }
             else
             {
-                isRunning = false; // Player died
+                isRunning = false; // Player died, game stopped
             }
         }
     }
@@ -143,12 +156,17 @@ void GameManager::UpdateGameState()
     // Check for Items
     for (int i = 0; i < itemList.size(); ++i)
     {
+		//If player is on the same position as an item
         if (player.getX() == itemList[i]->getX() && player.getY() == itemList[i]->getY())
         {
+			// Collect item
             player.addItemToInv(*itemList[i]);
+
+			//Remove item from map
             delete itemList[i];
             itemList.erase(itemList.begin() + i);
 
+            //Set timer for HUD message ("Item collected")
             hudMessageStartTime = GetTickCount64();
             hudMessageActive = true;
             break;
@@ -167,6 +185,7 @@ void GameManager::UpdateGameState()
 
 void GameManager::HandleInput()
 {
+	// Poll keyboard input without blocking
     if (_kbhit())
     {
         char key = _getch();
@@ -184,8 +203,10 @@ void GameManager::HandleInput()
         case 'q': isRunning = false; return;
         case 'k':
         {
+			// Save Game
             ClearHUD();
             GameData::GetInstance()->SaveGame(player, currentLevel, itemList, keyList, enemies);
+			//Show message in timed HUD
             hudMessage = "Game Saved";
             hudMessageStartTime = GetTickCount64();
             hudMessageActive = true;
@@ -193,6 +214,7 @@ void GameManager::HandleInput()
         }
         }
 
+		// Validate movement
         if (currentMap.isWalkable(nextX, nextY))
         {
             bool canMove = true;
@@ -201,6 +223,7 @@ void GameManager::HandleInput()
             for (int i = 0; i < keyList.size(); ++i)
             {
                 if (nextX == keyList[i]->getX() && nextY == keyList[i]->getY()) {
+					//If all enemies are defeated, keys are unlocked
                     if (!AreEnemiesRemaining()) {
                         player.addScore(50);
                         player.addItemToInv(Item("Key", "Unlock", 'K', 0, 0, 0));
@@ -209,16 +232,19 @@ void GameManager::HandleInput()
                         delete keyList[i];
                         keyList.erase(keyList.begin() + i);
 
+						//Show timed message in HUD
                         hudMessage = "Key Collected!";
                         hudMessageStartTime = GetTickCount64();
                         hudMessageActive = true;
 
+						//If all keys are collected, draw treasure
                         if (AreAllKeysCollected()) {
 							//Treasure appears
                             DrawEntityPos('X', 13, 8);
                         }
                     }
                     else {
+						//If enemies remain, cannot collect key
                         hudMessage = "Locked! Defeat enemies first.";
                         canMove = false;
                         hudMessageStartTime = GetTickCount64();
@@ -227,9 +253,13 @@ void GameManager::HandleInput()
                 }
             }
 
+			//Move player if allowed
             if (canMove)
             {
+                //Set player previous position to .
                 ClearEntityPos(oldX, oldY);
+
+                //Update player new position on the map
                 player.setPosition(nextX, nextY);
                 DrawEntityPos('P', player.getX(), player.getY());
             }
@@ -237,11 +267,13 @@ void GameManager::HandleInput()
     }
 }
 
+// Reset previous tile where entity was located to . as they move to new place
 void GameManager::ClearEntityPos(int x, int y)
 {
     currentMap.ReplaceTile('.', x, y);
 }
 
+// Draw entity symbol at new position
 void GameManager::DrawEntityPos(char symbol, int x, int y)
 {
     currentMap.ReplaceTile(symbol, x, y);
@@ -261,12 +293,15 @@ void GameManager::NextLevel()
     InitGame(false);
 }
 
+// Set console cursor position
+//To rerender/reprint map with new updates without glitching 
 void GameManager::SetCursorPosition(int x, int y) {
     HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
     COORD pos = { (SHORT)x, (SHORT)y };
     SetConsoleCursorPosition(hOut, pos);
 }
 
+// Hide console cursor for cleaner rendering
 void GameManager::HideCursor() {
     HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
     CONSOLE_CURSOR_INFO cursorInfo;
@@ -286,11 +321,13 @@ bool GameManager::AreAllKeysCollected() const {
     return keyList.empty();
 }
 
+//Set cursor to top-left and draw the current map
 void GameManager::DrawMap() {
     SetCursorPosition(0, 0);
     cout << currentMap;
 }
 
+// Clear the HUD area below the map once message duration expires
 void GameManager::ClearHUD() {
     int hudStartY = currentMap.getHeight() + 2;
     int hudWidth = 100;
@@ -300,6 +337,7 @@ void GameManager::ClearHUD() {
     }
 }
 
+// Draw the HUD below the map with player stats and messages
 void GameManager::DrawHUD() {
     int hudStartY = currentMap.getHeight() + 2;
     SetCursorPosition(0, hudStartY);
@@ -313,6 +351,7 @@ void GameManager::DrawHUD() {
 
 }
 
+//Timer to clear HUD message after specified time
 void GameManager::CallTimer(int time) {
     if (hudMessageActive) {
         ULONGLONG now = GetTickCount64();
