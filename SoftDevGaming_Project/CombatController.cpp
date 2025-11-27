@@ -1,11 +1,14 @@
+// Implementation of turn-based combat controller.
+
 #include "CombatController.h"
 #include <iostream>
 #include <conio.h> // For _getch() to pause output
 using namespace std;
 
-// Private constructor (empty because it's static)
+// Private constructor (empty because this is a static-only utility class)
 CombatController::CombatController() {}
 
+// Orchestrates a complete battle sequence between player and enemy.
 bool CombatController::StartBattle(Player& p, Enemy& e)
 {
 	system("cls"); // Clear screen for battle mode
@@ -14,6 +17,7 @@ bool CombatController::StartBattle(Player& p, Enemy& e)
 	cout << "You encountered a " << e.getName() << "!" << endl;
 	cout << "==========================================" << endl;
 
+	// Main combat loop: alternate turns until one combatant dies
 	while (p.isAlive() && e.isAlive())
 	{
 		// Player Turn
@@ -25,12 +29,12 @@ bool CombatController::StartBattle(Player& p, Enemy& e)
 		if (!p.isAlive()) break; // Player died
 	}
 
-	// Battle Over results
+	// Battle Over: display outcome
 	if (p.isAlive())
 	{
 		cout << "\nVictory! You defeated the " << e.getName() << "!" << endl;
 		cout << "Press any key to continue..." << endl;
-		_getch(); // Grab the character pressed
+		_getch(); // Wait for keypress
 		system("cls");
 		return true; // Player won
 	}
@@ -42,6 +46,7 @@ bool CombatController::StartBattle(Player& p, Enemy& e)
 	}
 }
 
+// Handles player's turn: displays status, prompts for action, executes choice.
 void CombatController::PlayerTurn(Player& p, Enemy& e)
 {
     cout << "\n--- YOUR TURN ---" << endl;
@@ -64,8 +69,9 @@ void CombatController::PlayerTurn(Player& p, Enemy& e)
         p.defend();
         break;
 
-    case '3':
+    case '3':// Use item from inventory
     {
+		//If inventory is empty, cannot use item
         if (p.getInventory().empty())
         {
             cout << "You have no items." << endl;
@@ -83,18 +89,18 @@ void CombatController::PlayerTurn(Player& p, Enemy& e)
         cout << slotChar << endl;
 
         int slot = slotChar - '0'; // convert char to int
-
         p.useItem(slot);
         break;
     }
 
+	//If invalid input, lose turn (error handling)
     default:
         cout << "You hesitated and lost your turn!" << endl;
         break;
     }
 }
 
-
+// Executes the enemy's turn: attack the player.
 void CombatController::EnemyTurn(Enemy& e, Player& p)
 {
 	cout << "\n--- ENEMY TURN ---" << endl;

@@ -1,11 +1,12 @@
+// Implementation of enemy factory: creates enemies and level spawn lists.
+
 #include "EnemyFactory.h"
 #include "ConcreteEnemy.h" 
 #include "CounterAttackEnemy.h"
 #include "FleeEnemy.h"   
 using namespace std;
 
-// Helper method implementation which creates 
-// a specific enemy type at specific coordinates.
+// Creates a specific type of enemy at the given coordinates.
 Enemy* EnemyFactory::CreateEnemy(int typeId, int x, int y) 
 {
     switch (typeId) {
@@ -18,8 +19,6 @@ Enemy* EnemyFactory::CreateEnemy(int typeId, int x, int y)
 
     case 3: // Orc (Counter-Attacking)
         return new CounterAttackEnemy(new ConcreteEnemy("Orc", 'E', 80, 11, x, y));
-
-        // TODO: Add more enemies
 
     default: // Default fallback
         return new ConcreteEnemy("Unknown", 'E', 5, 1, x, y);

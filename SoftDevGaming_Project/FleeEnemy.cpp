@@ -2,11 +2,14 @@
 #include <iostream>
 using namespace std;
 
+// Flee logic: if health < 30, move randomly away from player
 void FleeEnemy::Flee() {
     if (wrappedEnemy->getHealth() < 30) {
+		// Randomly move in one of the four directions
         int dx = (rand() % 3 - 1) * 2; // -2, 0, or +2
         int dy = (rand() % 3 - 1) * 2;
 
+		// Calculate new position
         int newX = wrappedEnemy->getX() + dx;
         int newY = wrappedEnemy->getY() + dy;
 
@@ -16,6 +19,7 @@ void FleeEnemy::Flee() {
         if (newY < 0) newY = 0;
         if (newY >= MAP_HEIGHT) newY = MAP_HEIGHT - 1;
 
+		// Update position
         wrappedEnemy->setX(newX);
         wrappedEnemy->setY(newY);
 
@@ -36,6 +40,7 @@ void FleeEnemy::takeDamage(int d) {
         cout << wrappedEnemy->getName() << " has been defeated." << endl;
     }
     else {
+		// Attempt to flee after taking damage if not dead
         Flee();
         cout << "You run after " << wrappedEnemy->getName() << endl;
     }

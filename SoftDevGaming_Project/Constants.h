@@ -1,3 +1,4 @@
+//File containing constants for a console-based game
 #pragma once
 #define MAP_WIDTH 15
 #define MAP_HEIGHT 10
