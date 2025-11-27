@@ -9,6 +9,7 @@ using namespace std;
 */
 
 class Tile {
+private:
 	int symbol;  // Refer to ASCII table for character
 
 public:

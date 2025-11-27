@@ -26,6 +26,7 @@ and is responsible for their cleanup in the destructor.
 
 class GameManager
 {
+	//Private members to encapsulate game state, use public methods to control game flow
 private:
 	Player player;
 	Map currentMap;
@@ -34,7 +35,7 @@ private:
 	int loadedLevel = 1; // Level loaded from save (if any)
 
 	ULONGLONG hudMessageStartTime = 0; //Time when the HUD message was set
-	bool hudMessageActive = false;		//Is there an active HUD message
+	bool hudMessageActive = false;		//If HUD message is active
 	string hudMessage = "";
 
 	// We store things here to manage them
@@ -71,11 +72,11 @@ private:
 	void CallTimer(int time);
 
 	// Helper to clean up map visuals before moving entities
-	void ClearEntityPos(int x, int y);
-	void DrawEntityPos(char symbol, int x, int y);
+	void ClearEntityPos(int x, int y); // Memory deallocation
+	void DrawEntityPos(char symbol, int x, int y); // Memory allocation
 
 	// Templates are to be defined in the header
-	//Delete pointers in a vector and clear the vector
+	//Delete pointers in a vector and clear the vector (Memory deallocation)
 	template<typename T>
 	void ClearPtrVector(vector<T*>& v)
 	{
@@ -83,7 +84,7 @@ private:
 		v.clear();
 	}
 
-	//Draw all entities from a list onto the map
+	//Draw all entities from a list onto the map (Memory allocation)
 	template<typename T>
 	void DrawEntities(const vector<T*>& list, Map& m)
 	{

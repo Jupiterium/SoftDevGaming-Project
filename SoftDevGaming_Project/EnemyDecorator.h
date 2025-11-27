@@ -12,6 +12,7 @@
 
 class EnemyDecorator : public Enemy 
 {
+// Encapsulated wrapped enemy for inheritance by concrete decorators
 protected:
     Enemy* wrappedEnemy;
 

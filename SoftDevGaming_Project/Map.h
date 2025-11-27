@@ -25,10 +25,10 @@ The map consists of a 2D array (mapTile) of Tile objects. Each tile stores
 
 class Map 
 {
+	// Private members to encapsulate map properties
 private:
 	int width, height;
 	vector<vector<Tile>> mapTile;
-
 public:
 	//Construct a Map with specified dimensions. Initializes the entire grid with empty tiles ('.').
 	Map(int width, int height);

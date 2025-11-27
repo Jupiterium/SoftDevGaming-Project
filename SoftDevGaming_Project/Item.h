@@ -14,8 +14,8 @@ using namespace std;
 
 class Item
 {
+	// Private members to encapsulate item properties
 private:
-    
     string name;
     string type;
     char symbol;

@@ -13,6 +13,7 @@ using namespace std;
 
 class Entity 
 {
+// Protected members accessible by derived classes
 protected:
     string name;
     char symbol;
