@@ -7,6 +7,8 @@ using namespace std;
 /*
 * Purpose of this Abstract Class:
 * Provides a base class for all living beings (Player, Enemy).
+* Defines common attributes and properties for all entities.
+* Cannot be instantiated
 */
 
 class Entity 
@@ -19,6 +21,7 @@ protected:
     int x, y; // Position on the map
 
 public:
+	// Constructor
     Entity(string n, char c, int h, int a, int x, int y);
     virtual ~Entity() {}
 
@@ -32,6 +35,7 @@ public:
     int getX() const;
     int getY() const;
 
+    //Setters
     int setX(int x);
     int setY(int y);
     void setAttack(int a);
@@ -43,6 +47,7 @@ public:
     // Virtual method (can be overridden)
     virtual void takeDamage(int d);
 
-    // Method to move the player for level changes
+    // Set entity's position on the map
+	//Use for level transition or respawn
     void setPosition(int newX, int newY);
 };

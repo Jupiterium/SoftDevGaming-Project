@@ -3,7 +3,7 @@
 using namespace std;
 
 void FleeEnemy::Flee() {
-    if (wrappedEnemy->getHealth() < 10) {
+    if (wrappedEnemy->getHealth() < 30) {
         int dx = (rand() % 3 - 1) * 2; // -2, 0, or +2
         int dy = (rand() % 3 - 1) * 2;
 
@@ -37,5 +37,6 @@ void FleeEnemy::takeDamage(int d) {
     }
     else {
         Flee();
+        cout << "You run after " << wrappedEnemy->getName() << endl;
     }
 }

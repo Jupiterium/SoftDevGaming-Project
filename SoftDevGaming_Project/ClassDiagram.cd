@@ -21,20 +21,6 @@
       <FileName>Entity.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ConcreteEnemy">
-    <Position X="6.75" Y="10" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAgAAAAAAAAAAA=</HashCode>
-      <FileName>ConcreteEnemy.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CounterAttackEnemy">
-    <Position X="3" Y="12.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAIAAAACAAAAAAAAAAAA=</HashCode>
-      <FileName>CounterAttackEnemy.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Enemy">
     <Position X="4" Y="7" Width="1.5" />
     <TypeIdentifier>

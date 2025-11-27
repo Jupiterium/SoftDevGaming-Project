@@ -5,7 +5,8 @@
 using namespace std;
 
 /*
-* Purpose of this Abstract Class:
+* Enemy extends Entity for inherited attributes and methods.
+* Remains abtract so it can be extended by ConcreteEnemy and Decorators without losing design consistency.
 * Base class for all enemies, supports behavior modification through Decorator pattern. 
 * Remains abstract by no implementing Entity’s pure virtual functions.
 */
@@ -13,9 +14,11 @@ using namespace std;
 class Enemy : public Entity
 {
 public:
-	// Constructor passes data to Entity
+	// Constructor passes data to Entity (name, char, health, attack, x coordinate, y coordinate)
 	Enemy(string n, char c, int h, int a, int x, int y);
 	virtual void Attack(Entity* target);
+
+	//Display enemy status
 	virtual void DisplayStatus() const;
 
 	virtual ~Enemy() {}

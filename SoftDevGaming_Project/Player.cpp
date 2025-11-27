@@ -88,7 +88,7 @@ void Player::useItem(int invSlot)
     }
     else if (item.getType() == "weapon")
     {
-        this->setAttack(item.getBoostAmount());
+        this->setAttack(this->getAttack() + item.getBoostAmount());
         cout << "Attack increased by " << item.getBoostAmount() << endl;
     }
 

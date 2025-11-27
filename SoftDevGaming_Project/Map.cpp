@@ -52,11 +52,11 @@ ostream& operator<<(ostream& out, const Map& map) {
             char symbol = map.mapTile[y][x].getChar();
 
             switch (symbol) {
-            case '.': out << GREY << symbol << RESET; break; // hidden area (green)
+            case '.': out << GREY << symbol << RESET; break; // hidden area
             case 'P': out << CYAN << symbol << RESET; break; // player
-            case 'X': out << RED << symbol << RESET; break; // Treasure
+            case 'X': out << BROWN << symbol << RESET; break; // Treasure
             case 'K': out << GREEN << symbol << RESET; break; // Key
-            case 'E': out << BROWN << symbol << RESET; break; // enemy (red)
+            case 'E': out << RED << symbol << RESET; break; // enemy (red)
             default:  out << BLUE << symbol << RESET; break;
             }
         }

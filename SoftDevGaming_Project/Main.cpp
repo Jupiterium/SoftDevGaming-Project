@@ -13,9 +13,9 @@ int main()
 
     std::cout << "\nLegends: " << endl;
     std::cout << CYAN << "P = Player" << RESET << endl;
-    std::cout << RED << "X = Treasure" << RESET << endl;
+    std::cout << BROWN << "X = Treasure" << RESET << endl;
     std::cout << GREEN << "K = Key" << RESET << endl;
-    std::cout << BROWN << "E = Enemy" << RESET << endl;
+    std::cout << RED << "E = Enemy" << RESET << endl;
     std::cout << BLUE << "Others = Collectables" << RESET << endl;
 
     std::cout << "\nPress K to save game, Q to quit." << endl;

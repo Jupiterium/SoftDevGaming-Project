@@ -3,20 +3,23 @@
 #include "Enemy.h"
 
 /*
-* Purpose of this Class:
-* Uses the Factory pattern to encapsulate the logic for creating enemies.
-* Also promotes Separation of Concerns principle. GameManager manages the game, EnemyFactory creates enemies.
+Factory for creating enemies with appropriate stats and decorators.
+
+EnemyFactory uses the Factory design pattern to encapsulate enemy creation logic.
+It supports both creating individual enemies and generating all enemies for a level.
+This separates creation details from the rest of the game system.
 */
 
 class EnemyFactory 
 {
 private:
+	//private constructor to prevent instantiation
     EnemyFactory() {}
 
 public:
     // Helper to create a specific type of enemy at a specific location
     static Enemy* CreateEnemy(int typeId, int x, int y);
 
-    // Creates the list of enemies for the GameManager
+    // Generate the enemy list for a specific game level.
     static std::vector<Enemy*> CreateEnemiesForLevel(int level);
 };

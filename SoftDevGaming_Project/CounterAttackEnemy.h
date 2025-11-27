@@ -5,6 +5,7 @@
 /*
 * Purpose of this Class:
 * Adds counter-attack logic to the takeDamage method.
+* When the wrapped enemy takes damage, it has a chance to immediately counter-attack.
 * (EnemyDecorator1)
 */
 
