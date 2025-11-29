@@ -6,13 +6,14 @@ using namespace std;
 /*
 * Purpose of this class:
 * The default, concrete implementation of an enemy. 
-* This is the "core" enemy object that the Decorator pattern will wrap to add new behaviours.
+* This is the core enemy object that the Decorator pattern will wrap to add new behaviours.
 */
 
 class ConcreteEnemy : public Enemy
 {
 public:
-	ConcreteEnemy(string n, int h, int a, int x, int y);
+	// Forward parameters to the Enemy base class (name, char, health, attack, x coordinate, y coordinate)
+	ConcreteEnemy(string n, char c, int h, int a, int x, int y);
 
 	// Concrete implementation of the virtual methods 
 	void Attack(Entity* target) override;

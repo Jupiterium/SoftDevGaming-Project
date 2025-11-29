@@ -123,11 +123,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CombatController.cpp" />
+    <ClCompile Include="ConcreteEnemy.cpp" />
+    <ClCompile Include="CounterAttackEnemy.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyDecorator.cpp" />
+    <ClCompile Include="EnemyFactory.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="FleeEnemy.cpp" />
+    <ClCompile Include="GameData.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CombatController.h" />
     <ClInclude Include="ConcreteEnemy.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="CounterAttackEnemy.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyDecorator.h" />
@@ -140,6 +154,9 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Tile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
