@@ -13,6 +13,7 @@ void ConcreteEnemy::Attack(Entity* target)
 	target->takeDamage(this->attack);
 }
 
+// Display the enemy's status
 void ConcreteEnemy::DisplayStatus() const
 {
 	cout << "> Enemy: " << this->name << " | HP: " << this->health << " | ATK: " << this->attack << endl;

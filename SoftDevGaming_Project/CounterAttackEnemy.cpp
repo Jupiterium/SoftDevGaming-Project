@@ -19,14 +19,19 @@ void CounterAttackEnemy::takeDamage(int d)
 	}
 }
 
-// Attack with a chance to counterattack.
-void CounterAttackEnemy::Attack(Entity* target) {
+// Attack with a chance to counterattack
+void CounterAttackEnemy::Attack(Entity* target) 
+{
+	// Random chance to counter-attack
 	int chance = rand() % 100;
-	if (chance < 60) { // 60% chance to counter-attack
+
+	if (chance < 60) // 60% chance to counter-attack
+	{ 
 		cout << ">>> " << wrappedEnemy->getName() << " counterattacks in rage!" << endl;
-		target->takeDamage(attack);
+		target->takeDamage(attack); // Take damage equal to this enemy's attack value
 	}
-	else {
+	else 
+	{
 		wrappedEnemy->Attack(target); // Normal attack
 	}
 }

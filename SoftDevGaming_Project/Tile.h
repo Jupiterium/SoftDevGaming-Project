@@ -8,19 +8,15 @@ using namespace std;
 * Represents a single tile on the map. Acts as a simple data class.
 */
 
-class Tile {
+class Tile 
+{
 private:
-	int symbol;  // Refer to ASCII table for character
+	int symbol; // Refer to ASCII table for character
 
 public:
-	//Construct a Tile with an optional character symbol.
-	//@param symbol The ASCII character to display for this tile
-	Tile(char symbol = ' ') {
-		this->symbol = symbol;
-	}
+	// Constructor with optional symbol parameter (default is space character)
+	Tile(char symbol = ' ') { this->symbol = symbol; }
 
-	//Getter for the tile's character symbol.
-	char getChar() const {
-		return symbol;
-	}
+	// Getter for the tile's character symbol
+	char getChar() const { return symbol; }
 };

@@ -9,14 +9,16 @@
 * (EnemyDecorator1)
 */
 
-class CounterAttackEnemy : public EnemyDecorator {
+class CounterAttackEnemy : public EnemyDecorator 
+{
 public:
     // Inherits the constructor
     using EnemyDecorator::EnemyDecorator;
 
-    // Overridden method
+    // Overridden methods
     void takeDamage(int d) override;
-    
     void Attack(Entity* target) override;
+
+	// Destructor to clean up the wrapped enemy
     ~CounterAttackEnemy() override {}
 };

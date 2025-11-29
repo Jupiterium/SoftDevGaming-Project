@@ -6,7 +6,7 @@ using namespace std;
 /*
 * Purpose of this class:
 * The default, concrete implementation of an enemy. 
-* This is the "core" enemy object that the Decorator pattern will wrap to add new behaviours.
+* This is the core enemy object that the Decorator pattern will wrap to add new behaviours.
 */
 
 class ConcreteEnemy : public Enemy

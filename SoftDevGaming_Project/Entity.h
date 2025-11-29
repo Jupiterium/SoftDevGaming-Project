@@ -8,12 +8,12 @@ using namespace std;
 * Purpose of this Abstract Class:
 * Provides a base class for all living beings (Player, Enemy).
 * Defines common attributes and properties for all entities.
-* Cannot be instantiated
+* Cannot be instantiated.
 */
 
 class Entity 
 {
-// Protected members accessible by derived classes
+// Protected members that are accessible by derived classes
 protected:
     string name;
     char symbol;

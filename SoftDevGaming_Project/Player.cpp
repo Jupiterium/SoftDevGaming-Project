@@ -1,7 +1,8 @@
-// Implementation of Player class: combat, inventory, movement.
 #include "Player.h"
 #include <iostream>
 using namespace std;
+
+// Implementation of Player class: combat, inventory, movement
 
 // This is the key: we pass the Entity's data up using the initializer list.
 // Construct player with name, starting position and default health/attack.
@@ -23,11 +24,12 @@ void Player::DisplayStatus() const
 }
 
 // Apply damage, with blocking if currently defending.
-void Player::takeDamage(int d) {
+void Player::takeDamage(int d) 
+{
     if (isDefending)
     {
         cout << name << " blocked the attack!" << endl;
-        isDefending = false;  // defend only lasts for one attack
+        isDefending = false;  // Defend only lasts for one attack
         return;
     }
 
@@ -37,7 +39,6 @@ void Player::takeDamage(int d) {
 // Getter
 int Player::getScore() const { return score; }
 vector<Item>& Player::getInventory() { return inventory; }
-
 
 // The Player-specific methods
 // Move Player in the specified direction
@@ -53,24 +54,24 @@ void Player::move(char direction)
 	}
 }
 
-//Activate defending state
+// Activate defending state
 void Player::defend()
 {
 	cout << this->name << " is defending!" << endl;
     isDefending = true;
 }
 
-//Add item to player's inventory
+// Add item to player's inventory
 void Player::addItemToInv(const Item& item)
 {
 	cout << item.getName() << " was added to your inventory!" << endl;
 	inventory.push_back(item);
 }
 
-//Use an item from the inventory slot index
+// Use an item from the inventory slot index
 void Player::useItem(int invSlot)
 {
-	//Error handling for empty inventory or invalid slot
+	// Error handling for empty inventory or invalid slot
     if (inventory.empty())
     {
         cout << "No items available." << endl;
@@ -83,12 +84,11 @@ void Player::useItem(int invSlot)
         return;
     }
 
-    //If item exists in the inventory, player can use it
+    // If item exists in the inventory, player can use it
     Item& item = inventory[invSlot];
-
     cout << this->name << " uses the " << item.getName() << "!" << endl;
 
-	//Apply item effects based on type
+	// Apply item effects based on type
 	// Potion restores health, weapon boosts attack
     if (item.getType() == "potion")
     {
@@ -101,8 +101,7 @@ void Player::useItem(int invSlot)
         cout << "Attack increased by " << item.getBoostAmount() << endl;
     }
 
-    
-    //Remove used item from inventory
+    // Remove used item from inventory
     inventory.erase(inventory.begin() + invSlot);
 }
 

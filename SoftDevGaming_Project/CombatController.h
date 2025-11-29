@@ -17,8 +17,9 @@ private:
     CombatController();
 
     // Private helpers for the combat/battle
-    //Handle a player turn: display status, prompt for action, execute choice.
+    // Handle a player turn (display status, prompt for action, execute choice)
     static void PlayerTurn(Player& p, Enemy& e);
+
     //Handle an enemy turn: execute the enemy's attack on the player.
     static void EnemyTurn(Enemy& e, Player& p);
 

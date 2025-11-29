@@ -295,14 +295,16 @@ void GameManager::NextLevel()
 
 // Set console cursor position
 //To rerender/reprint map with new updates without glitching 
-void GameManager::SetCursorPosition(int x, int y) {
+void GameManager::SetCursorPosition(int x, int y) 
+{
     HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
     COORD pos = { (SHORT)x, (SHORT)y };
     SetConsoleCursorPosition(hOut, pos);
 }
 
 // Hide console cursor for cleaner rendering
-void GameManager::HideCursor() {
+void GameManager::HideCursor() 
+{
     HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
     CONSOLE_CURSOR_INFO cursorInfo;
     GetConsoleCursorInfo(hOut, &cursorInfo);
@@ -310,40 +312,43 @@ void GameManager::HideCursor() {
     SetConsoleCursorInfo(hOut, &cursorInfo);
 }
 
-bool GameManager::AreEnemiesRemaining() const {
-    for (auto e : enemies) {
-        if (e->isAlive()) return true;
-    }
+// Check if any enemies are still alive
+bool GameManager::AreEnemiesRemaining() const 
+{
+    for (auto e : enemies) { if (e->isAlive()) return true; }
     return false;
 }
 
-bool GameManager::AreAllKeysCollected() const {
-    return keyList.empty();
-}
+// Check if all keys have been collected
+bool GameManager::AreAllKeysCollected() const { return keyList.empty(); }
 
 //Set cursor to top-left and draw the current map
-void GameManager::DrawMap() {
+void GameManager::DrawMap() 
+{
     SetCursorPosition(0, 0);
     cout << currentMap;
 }
 
 // Clear the HUD area below the map once message duration expires
-void GameManager::ClearHUD() {
+void GameManager::ClearHUD() 
+{
     int hudStartY = currentMap.getHeight() + 2;
     int hudWidth = 100;
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < 15; i++) 
+    {
         SetCursorPosition(0, hudStartY + i);
         cout << string(hudWidth, ' ');
     }
 }
 
 // Draw the HUD below the map with player stats and messages
-void GameManager::DrawHUD() {
+void GameManager::DrawHUD() 
+{
     int hudStartY = currentMap.getHeight() + 2;
     SetCursorPosition(0, hudStartY);
     cout << "Level " << currentLevel << endl;
     cout << CYAN << "[Press K to save, Q to quit] " << RESET << endl;
-    cout << BLUE << hudMessage << RESET << endl;
+    cout << GREEN << hudMessage << RESET << endl;
     cout << "\nHP: " << player.getHealth() << "  Score: " << player.getScore() << endl;
     cout << "Pos: (" << player.getX() << "," << player.getY() << ")" << endl;
     cout << "Enemies remaining: " << enemies.size() << endl;
@@ -352,10 +357,12 @@ void GameManager::DrawHUD() {
 }
 
 //Timer to clear HUD message after specified time
-void GameManager::CallTimer(int time) {
+void GameManager::CallTimer(int time) 
+{
     if (hudMessageActive) {
         ULONGLONG now = GetTickCount64();
-        if (now - hudMessageStartTime >= time) {
+        if (now - hudMessageStartTime >= time) 
+        {
             ClearHUD();
             hudMessageActive = false;
             hudMessage.clear();

@@ -9,29 +9,18 @@ Entity::Entity(string n, char c, int h, int a, int x, int y) : name(n), symbol(c
 
 // Implementation of Getters/Helper methods
 int Entity::getHealth() const { return health; }
-
 void Entity::setHealth(int h) { health = h; }
-
 string Entity::getName() const { return name; }
-
 char Entity::getSymbol() const { return symbol; }
-
 int Entity::getAttack() const { return attack; }
-
 int Entity::getX() const { return x; }
-
 int Entity::getY() const { return y; }
 
 // Implementation of Setters
 int Entity::setX(int newX) { return this->x = newX; return this->x; }
 int Entity::setY(int newY) { return this->y = newY; return this->y; }
 void Entity::setAttack(int a) { (this->attack) += a; }
-
-
-bool Entity::isAlive() const
-{
-	return health > 0;
-}
+bool Entity::isAlive() const { return health > 0; }
 
 // Virtual method implementation
 // Apply damage to the entity by subtracting from health

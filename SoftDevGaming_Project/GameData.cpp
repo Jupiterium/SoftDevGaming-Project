@@ -1,5 +1,3 @@
-// Implementation of save/load functionality using singleton pattern.
-
 #include "GameData.h"
 #include "Player.h"
 #include "EnemyFactory.h"
@@ -7,13 +5,15 @@
 #include <string>
 using namespace std;
 
+// Implementation of save/load functionality using Singleton pattern
+
 // Initialize static singleton instance
 GameData* GameData::instance = nullptr;
 
-// Private constructor (singleton enforcement).
+// Private constructor
 GameData::GameData() {}
 
-// Get or create the singleton instance.
+// Get/Create the singleton instance
 GameData* GameData::GetInstance()
 {
     if (instance == nullptr)
@@ -23,12 +23,14 @@ GameData* GameData::GetInstance()
     return instance;
 }
 
-// Save all game state to "savegame.txt"
+// Save all game state to "save_game.txt"
 void GameData::SaveGame(Player& player, int currentLevel, const vector<Item*>& worldItems, const vector<Item*>& worldKeys, const vector<Enemy*>& enemies)
 {
-    ofstream outFile("savegame.txt");
+    ofstream outFile("save_game.txt");
+
 	//Error-handling for file issues
-    if (!outFile.is_open()) {
+    if (!outFile.is_open()) 
+    {
         cout << "Error: Unable to save game." << endl;
         return;
     }
@@ -46,7 +48,8 @@ void GameData::SaveGame(Player& player, int currentLevel, const vector<Item*>& w
     // Save Inventory
     vector<Item>& inv = player.getInventory();
     outFile << inv.size() << endl;
-    for (const auto& item : inv) {
+    for (const auto& item : inv) 
+    {
         outFile << item.getName() << endl;
         outFile << item.getType() << endl;
         outFile << item.getSymbol() << endl;
@@ -88,21 +91,20 @@ void GameData::SaveGame(Player& player, int currentLevel, const vector<Item*>& w
     outFile.close();
 }
 
-//Load game state from "savegame.txt"
+//Load game state from "save_game.txt"
 bool GameData::LoadGame(Player& player, int& currentLevel, vector<Item*>& worldItems, vector<Item*>& worldKeys, vector<Enemy*>& enemies)
 {
-    ifstream inFile("savegame.txt");
+    ifstream inFile("save_game.txt");
 
 	//Error handling for missing file
-    if (!inFile.is_open()) {
-		return false; 
-    }
+    if (!inFile.is_open()) { return false; }
 
 	//Load Player Stats
     string name; char symbol; int hp, atk, score, x, y;
     getline(inFile, name);
     inFile >> symbol >> hp >> atk >> score >> x >> y;
 
+	// Set player data
     player.setHealth(hp);
     player.setAttack(atk);
     player.setScore(score);
@@ -129,15 +131,18 @@ bool GameData::LoadGame(Player& player, int& currentLevel, vector<Item*>& worldI
     }
     player.setInventory(loadedInv);
 
+    /* Items */
     // Load World Items
     int itemCount;
     inFile >> itemCount;
-    inFile.ignore();
+	inFile.ignore(); // This is to flush the newline character
 
-    for (auto i : worldItems) delete i;
-    worldItems.clear();
+	// Clear existing world items
+    for (auto i : worldItems) delete i; { worldItems.clear(); }
 
-    for (int i = 0; i < itemCount; i++) {
+	// Load each item
+    for (int i = 0; i < itemCount; i++) 
+    {
         string iName, iType; char iSym; int iBoost, iX, iY;
         getline(inFile, iName);
         getline(inFile, iType);
@@ -146,14 +151,16 @@ bool GameData::LoadGame(Player& player, int& currentLevel, vector<Item*>& worldI
         worldItems.push_back(new Item(iName, iType, iSym, iBoost, iX, iY));
     }
 
+    /* Keys */
     // Load World Keys
     int keyCount;
     inFile >> keyCount;
     inFile.ignore();
 
-    for (auto k : worldKeys) delete k;
-    worldKeys.clear();
+	// Clear existing world keys
+    for (auto k : worldKeys) delete k; { worldKeys.clear(); }
 
+	// Load each key
     for (int i = 0; i < keyCount; i++)
     {
         string kName, kType; char kSym; int kBoost, kX, kY;
@@ -164,14 +171,17 @@ bool GameData::LoadGame(Player& player, int& currentLevel, vector<Item*>& worldI
         worldKeys.push_back(new Item(kName, kType, kSym, kBoost, kX, kY));
     }
 
+
+	/* Enemies */
     // Load Enemies
     int enemyCount;
     inFile >> enemyCount;
     inFile.ignore();
 
-    for (auto e : enemies) delete e;
-    enemies.clear();
+	// Clear existing enemies
+    for (auto e : enemies) delete e; { enemies.clear(); }
 
+	// Load each enemy
     for (int i = 0; i < enemyCount; ++i)
     {
         string eName; int eHp, eAtk, eX, eY;
@@ -179,7 +189,7 @@ bool GameData::LoadGame(Player& player, int& currentLevel, vector<Item*>& worldI
         inFile >> eHp >> eAtk >> eX >> eY;
         inFile.ignore();
 
-        int typeId = 1;
+		int typeId = 1; // Slime
         if (eName == "Goblin") typeId = 2;
         else if (eName == "Orc") typeId = 3;
 

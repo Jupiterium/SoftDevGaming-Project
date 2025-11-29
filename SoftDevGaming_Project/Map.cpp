@@ -3,14 +3,16 @@
 #include <iostream>
 
 //Constructor to initialize map dimensions and fill with hidden tiles '.'
-Map::Map(int _width, int _height) {
+Map::Map(int _width, int _height) 
+{
     this->width = _width;
     this->height = _height;
+
 	// Initialize 2D vector with empty tiles
     vector<vector<Tile>> _temp(height, vector<Tile>(width));
     mapTile = _temp;
 
-    GenerateHiddenGrid(); // fill the map initially
+    GenerateHiddenGrid(); // Fill the map initially
 }
 
 //Getters
@@ -18,41 +20,42 @@ int Map::getWidth() { return this->width; }
 int Map::getHeight() { return this->height; }
 
 // Check if coordinates are within map bounds
-bool Map::isWalkable(int x, int y) {
-    return (x >= 0 && x < width && y >= 0 && y < height);
-}
+bool Map::isWalkable(int x, int y) { return (x >= 0 && x < width && y >= 0 && y < height); }
 
 // Replace tile at (x,y) with new character if walkable
-void Map::ReplaceTile(char new_char, int x, int y) {
-    if (isWalkable(x, y)) {
+void Map::ReplaceTile(char new_char, int x, int y) 
+{
+    if (isWalkable(x, y)) 
+    {
         mapTile[y][x] = Tile(new_char);
     }
 }
 
 // Fill map with default forest tiles '.'
-void Map::GenerateHiddenGrid() {
-    for (int y = 0; y < height; ++y) {
-        for (int x = 0; x < width; ++x) {
+void Map::GenerateHiddenGrid() 
+{
+    for (int y = 0; y < height; ++y) 
+    {
+        for (int x = 0; x < width; ++x) 
+        {
             mapTile[y][x] = Tile('.');
         }
     }
 }
 
 // Getter for specific tile
-Tile& Map::getTile(int x, int y) {
-    return mapTile[y][x];
-}
+Tile& Map::getTile(int x, int y) { return mapTile[y][x]; }
 
 // Overloaded output operator to print the map with color coding
-ostream& operator<<(ostream& out, const Map& map) {
+ostream& operator<<(ostream& out, const Map& map) 
+{
     // Top border
     out << '+';
-    for (int x = 0; x < map.width; ++x)
-        out << "-";
+    for (int x = 0; x < map.width; ++x) out << "-";
     out << "+\n";
 
     // Rows
-	//If tiles are different characters, print with different colors
+	// If tiles are different characters, print with different colors
     for (int y = 0; y < map.height; ++y) {
         out << '|';
         for (int x = 0; x < map.width; ++x) {
@@ -72,8 +75,7 @@ ostream& operator<<(ostream& out, const Map& map) {
 
     // Bottom border
     out << '+';
-    for (int x = 0; x < map.width; ++x)
-        out << "-";
+    for (int x = 0; x < map.width; ++x) out << "-";
     out << "+\n";
 
     return out;

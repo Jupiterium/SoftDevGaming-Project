@@ -9,12 +9,12 @@ using namespace std;
 // Creates a specific type of enemy at the given coordinates.
 Enemy* EnemyFactory::CreateEnemy(int typeId, int x, int y) 
 {
-    switch (typeId) {
+    switch (typeId) 
+    {
     case 1: // Slime (Weak)
         return new ConcreteEnemy("Slime", 'E', 100, 5, x, y);
 
     case 2: // Goblin (Fleeing)
-        // Note: Decorator takes a pointer to the concrete enemy
         return new FleeEnemy(new ConcreteEnemy("Goblin", 'E', 95, 8, x, y));
 
     case 3: // Orc (Counter-Attacking)

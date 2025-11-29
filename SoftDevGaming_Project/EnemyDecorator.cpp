@@ -16,13 +16,13 @@ void EnemyDecorator::Attack(Entity* target)
     wrappedEnemy->Attack(target);
 }
 
-// Forward display status to the wrapped enemy.
+// Forward display status to the wrapped enemy
 void EnemyDecorator::DisplayStatus() const
 {
     wrappedEnemy->DisplayStatus();
 }
 
-//Forward damage to wrapped enemy and update own health.
+//Forward damage to wrapped enemy and update own health
 void EnemyDecorator::takeDamage(int d)
 {
     wrappedEnemy->takeDamage(d);

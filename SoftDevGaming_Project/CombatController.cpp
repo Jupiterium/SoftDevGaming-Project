@@ -8,16 +8,16 @@ using namespace std;
 // Private constructor (empty because this is a static-only utility class)
 CombatController::CombatController() {}
 
-// Orchestrates a complete battle sequence between player and enemy.
+// Manages a complete battle sequence between player and enemy.
 bool CombatController::StartBattle(Player& p, Enemy& e)
 {
 	system("cls"); // Clear screen for battle mode
-	cout << "==========================================" << endl;
-	cout << "COMBAT STARTED!" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "C O M B A T   S T A R T E D!" << endl;
 	cout << "You encountered a " << e.getName() << "!" << endl;
-	cout << "==========================================" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 
-	// Main combat loop: alternate turns until one combatant dies
+	// Main combat loop (alternate turns until one entity dies)
 	while (p.isAlive() && e.isAlive())
 	{
 		// Player Turn
@@ -29,12 +29,12 @@ bool CombatController::StartBattle(Player& p, Enemy& e)
 		if (!p.isAlive()) break; // Player died
 	}
 
-	// Battle Over: display outcome
+	// Battle Over (display outcome)
 	if (p.isAlive())
 	{
 		cout << "\nVictory! You defeated the " << e.getName() << "!" << endl;
 		cout << "Press any key to continue..." << endl;
-		_getch(); // Wait for keypress
+		(void) _getch(); // Wait for keypress (also explicitly ignore return value)
 		system("cls");
 		return true; // Player won
 	}
@@ -46,16 +46,19 @@ bool CombatController::StartBattle(Player& p, Enemy& e)
 	}
 }
 
-// Handles player's turn: displays status, prompts for action, executes choice.
+// Handles player's turn  (displays status, prompts for action, executes choice)
 void CombatController::PlayerTurn(Player& p, Enemy& e)
 {
-    cout << "\n--- YOUR TURN ---" << endl;
+	// Display status
+    cout << "\n~~~ Y O U R   T U R N ~~~" << endl;
     p.DisplayStatus();
     e.DisplayStatus();
 
+	// Prompt for action
     cout << "[1] Attack\n[2] Defend\n[3] Use Item" << endl;
     cout << "Choose action: ";
 
+	// Get player choice (without needing Enter key)
     char choice = _getch();
     cout << choice << endl;
 
@@ -69,31 +72,42 @@ void CombatController::PlayerTurn(Player& p, Enemy& e)
         p.defend();
         break;
 
-    case '3':// Use item from inventory
+    case '3': // Use item from inventory
     {
-		//If inventory is empty, cannot use item
+		// If inventory is empty, cannot use item
         if (p.getInventory().empty())
         {
             cout << "You have no items." << endl;
             break;
         }
 
+		// Display inventory with item descriptions provided by Item
         cout << "\nYour Items:\n";
-        for (int i = 0; i < p.getInventory().size(); i++)
+        for (int i =0; i < (int)p.getInventory().size(); i++) // Int casting because size() returns size_t
         {
-            cout << "[" << i << "] " << p.getInventory()[i].getName() << endl;
+            const Item& it = p.getInventory()[i];
+            cout << "[" << i << "] " << it.getName() << " (" << it.getItemDescription() << ")" << endl;
         }
 
+		// Prompt for item slot
         cout << "Choose item slot: ";
         char slotChar = _getch();
         cout << slotChar << endl;
 
-        int slot = slotChar - '0'; // convert char to int
-        p.useItem(slot);
+		// Validate slot input and call useItem only if valid
+        int slot = slotChar - '0'; // Convert char to int
+		if (slot >= 0 && slot < (int)p.getInventory().size()) 
+        {
+          p.useItem(slot);
+        }
+        else
+        {
+          cout << "Invalid slot selected. Turn wasted." << endl;
+        }
         break;
     }
 
-	//If invalid input, lose turn (error handling)
+	//If invalid input, lose turn 
     default:
         cout << "You hesitated and lost your turn!" << endl;
         break;
@@ -103,6 +117,6 @@ void CombatController::PlayerTurn(Player& p, Enemy& e)
 // Executes the enemy's turn: attack the player.
 void CombatController::EnemyTurn(Enemy& e, Player& p)
 {
-	cout << "\n--- ENEMY TURN ---" << endl;
+	cout << "\n~ E N E M Y   T U R N ~~~";
 	e.Attack(&p);
 }

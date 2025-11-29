@@ -2,9 +2,11 @@
 #include <iostream>
 using namespace std;
 
-// Flee logic: if health < 30, move randomly away from player
-void FleeEnemy::Flee() {
-    if (wrappedEnemy->getHealth() < 30) {
+// Flee logic (if health is less than 30, move randomly away from player)
+void FleeEnemy::Flee() 
+{
+    if (wrappedEnemy->getHealth() < 30) 
+    {
 		// Randomly move in one of the four directions
         int dx = (rand() % 3 - 1) * 2; // -2, 0, or +2
         int dy = (rand() % 3 - 1) * 2;
@@ -27,7 +29,8 @@ void FleeEnemy::Flee() {
     }
 }
 
-void FleeEnemy::takeDamage(int d) {
+void FleeEnemy::takeDamage(int d) 
+{
     // Deal damage to the inner enemy
     wrappedEnemy->takeDamage(d);
 
@@ -39,7 +42,8 @@ void FleeEnemy::takeDamage(int d) {
     {
         cout << wrappedEnemy->getName() << " has been defeated." << endl;
     }
-    else {
+    else 
+    {
 		// Attempt to flee after taking damage if not dead
         Flee();
         cout << "You run after " << wrappedEnemy->getName() << endl;

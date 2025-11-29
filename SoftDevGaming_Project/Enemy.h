@@ -8,7 +8,7 @@ using namespace std;
 * Enemy extends Entity for inherited attributes and methods.
 * Remains abtract so it can be extended by ConcreteEnemy and Decorators without losing design consistency.
 * Base class for all enemies, supports behavior modification through Decorator pattern. 
-* Remains abstract by no implementing Entity’s pure virtual functions.
+* Remains abstract by not implementing Entity’s pure virtual functions.
 */
 
 class Enemy : public Entity
@@ -21,5 +21,6 @@ public:
 	//Display enemy status
 	virtual void DisplayStatus() const;
 
+	// Virtual destructor for proper cleanup in derived classes
 	virtual ~Enemy() {}
 };

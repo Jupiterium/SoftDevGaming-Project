@@ -9,18 +9,18 @@
 using namespace std;
 
 /* 
-The game's 2D grid-based world representation.
-Map manages a 2D array of Tiles and provides methods for checking walkability,
-replacing tiles, and rendering the map to the console with color coding.
-
-The map consists of a 2D array (mapTile) of Tile objects. Each tile stores
- a character representing the terrain, entities, or items at that position.
- The map handles:
- - Walkability checks (prevents movement out of bounds)
- - Tile updates (replacing characters as entities/items move)
- - Rendering with color coding (player=cyan, enemy=brown, treasure=red, etc.)
-
- Map dimensions are defined in Constants.h (MAP_WIDTH, MAP_HEIGHT).
+* The game's 2D grid-based world representation.
+* Map manages a 2D array of Tiles and provides methods for checking walkability,
+* replacing tiles, and rendering the map to the console with color coding.
+*
+* The map consists of a 2D array (mapTile) of Tile objects. Each tile stores
+* a character representing the terrain, entities, or items at that position.
+* The map handles:
+* - Walkability checks (prevents movement out of bounds)
+* - Tile updates (replacing characters as entities/items move)
+* - Rendering with color coding (player=cyan, enemy=brown, treasure=red, etc.)
+* 
+* Map dimensions are defined in Constants.h (MAP_WIDTH, MAP_HEIGHT).
 */
 
 class Map 
